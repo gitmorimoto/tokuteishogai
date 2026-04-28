@@ -1,0 +1,541 @@
+	
+  <div id="inpform1" class="inpform">
+   
+     <form action="filetext.php" method="post">
+    <label for="id">ID</label><br>
+    <input type="text" name="id"  id="id" class="inp" value="<?php if(!empty($id)){echo $id;}   ?>"><br>
+    <label for= "namef">名前（ふりがな）</label><br>  
+    <input type="text" name="namef" value="<?php if(!empty($namef)){echo $namef;}   ?>" id="namef" class="inp" value="namef"><br>
+    <label for="namej">名前</label><br>
+    <input type="text" name="namej" value="<?php if(!empty($namej)){echo $namej;}   ?>" id="namej" class="inp" value="namej"><br>
+    <label for="bday">出生年月日</label><br>
+    <input type="date" name="birthday" value="<?php if(!empty($birthdate)){echo $birthdate;}   ?>" id="bday"　class="inp" value="birthdate"><br>
+    <label for="male">性別</label><br>
+    <?php $chm="" ;$chf=""; ?>
+    <?php if($gender=="./images/genderm.png"){$chm="checked";}  ?>
+    <?php if($gender=="./images/genderf.png"){$chf="checked";}  ?>
+    <input type="checkbox" name="genderbox" value="male" id="male" <?php echo $chm ; ?> > 男<br>
+    <input type="checkbox" name="genderbox" value="female" id="female" <?php echo $chf ; ?> > 女<br>
+    
+    
+    
+    郵便番号:<input value="<?php if(!empty($pn)){echo $pn;}   ?>" type="text" name="zip01" class="inp" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"><br>
+ 
+    <label for="address01">住所</label><br>
+    <input value="<?php if(!empty($addr)){echo $addr;}   ?>" type="text" name="addr11" size="60" id="address01" class="inp" /><br>
+    <label for="diag0">診断</label><br>
+    <input value="<?php if(!empty($diag0)){echo $diag0;}   ?>" type="text" name="diag0" value="" id="diag0" class="inp"><br>
+    <label for="icd1">ICD10</label><br>
+    <input type="text" name="icd1" value="<?php if(!empty($icd1)){echo $icd1;}   ?>" class="inp"><br>
+    <div class="wrap">
+        <label for="date1">主な精神障害</label><br>
+        <input type="date" name="date1" value="<?php if(!empty($date1)){echo $date1;}   ?>" id="date1" class=""><br>
+        <label for="date2">合併精神障害</label><br>
+        <input type="date" name="date2" value="<?php if(!empty($date2)){echo $date2;}   ?>" id="date2" class="inp"><br>
+        <label for="date3">合併身体障害</label><br>
+        <input type="date" name="date3" value="<?php if(!empty($date3)){echo $date3;}   ?>" id="date3" class="inp"><br>
+
+        <?php $infform="" ;$infdict=""; ?>
+        <?php if($sostr1=='./images/form.png'){$infform="checked";}  ?>
+        <?php if($sostr2=='./images/dict.png'){$infdict="checked";}  ?>
+        <label for="s1">診療録で確認</label><br>
+        <input type="checkbox" name="infosource" id="s1" value="form" <?php echo $infform;   ?>><br>
+        <label for="s2">本人の申し立て</label><br> 
+        <input type="checkbox" name="infosource" id="s2" value="dict" <?php echo $infdict;   ?>><br>
+    </div>
+    <div class="wrap">
+        <label for="compl1">合併精神障害</label><br>
+        <input type="text" name="compl1" id="compl1" class="inp" value="<?php if(!empty($compl1)){echo $compl1;}   ?>"><br>
+        <label for="compl2">合併身体障害</label><br>
+        <input type="text" name="compl2" id="compl2" class="inp" value="<?php if(!empty($compl2)){echo $compl2;}   ?>"><br>
+        <label for="fdiagdate">はじめて医師の診断を受けた日</label><br>
+        <input type="date" name="fdiagdate" id="fdiagdate" class="inp"  value="<?php if(!empty($fdiagdate)){echo $fdiagdate;}   ?>"><br>
+        <?php $infform3="" ;$infdict4=""; ?>
+        <?php if($sostr3=="./images/form.png"){$infform3="checked";}  ?>
+        <?php if($sostr4=="./images/dict.png"){$infdict4="checked";}  ?>
+        <label for="s1">診療録で確認</label><br>
+        <input type="checkbox" name="infosource2" id="s1" value="form" <?php echo $infform3;   ?> ><br>
+        <label for="s2">本人の申し立て</label><br> 
+        <input type="checkbox" name="infosource2" id="s2" value="dict" <?php echo $infdict4;   ?>><br> 
+    </div>
+        <label for="pillnes">現病歴</label><br>
+        <textarea cols="30" rows="10" id="pillness" name="pillnesstext" class="tarea"><?php if(!empty($pillnesstext)){echo $pillnesstext;}   ?></textarea><br>
+         <div id="narbox">
+        <label for="narrator">陳述者の氏名</label><br> 
+        <input type="text" class="exp" name="narrator" id="" value="<?php if(!empty($narrator)){echo $narrator;}   ?>"><br> 
+   </div>
+   <div id="relbox">
+         <label for="relation">患者との続柄</label><br> 
+        <select type="text" class="exp" name="relation" id="" value="<?php if(!empty($relation)){echo $relation;}   ?>"><br>
+          <option>母</option>
+          <option>父</option>
+          <option>祖母</option>
+          <option>祖父</option>
+          <option></option>
+        </select>
+   </div>
+  </div>
+  
+   <div id="inpform2" class="inpform">*
+    
+    <div class="wrap">
+        <div >発病依頼の治療歴</div>
+        <label for="hosp1">病院名</label><br>
+        <input type="text" name="hosp1" id="hosp1" class="inp" list="hosp" value="<?php if(!empty($hosp1)){echo $hosp1;}   ?>" autocomplete="off">
+              <datalist id="hosp">
+                  <option value="旭川荘南愛媛病院">
+                  <option value="愛媛県立子ども療育センター">
+  　　　　         <option value="市立宇和島病院">
+                  <option value="愛媛大学医学部付属病院">
+              </datalist><br>
+        <label for="stm1">診療開始</label><br>
+        <input type="month" name="stm1" id="stm1" value="<?php if(!empty($stm1)){echo $stm1;}   ?>" class="inp"><br>
+
+        <label for="em1">診療終了</label><br>
+        <input type="month" name="em1" id="em1" value="<?php if(!empty($em1)){echo $em1;}   ?>" class="inp">" class="inp"><br>
+        <label for="adm1"></label><br>
+        
+        <select id="adm1" name="adm1" class="inp" value="<?php if(!empty($adm1)){echo $adm1;}   ?>">
+          <option value="入院">入院</option>
+          <option value="外来" selected>外来</option>
+          <option value="" ></option>
+          
+        </select><br>
+        
+        <label for="diag1">病名</label><br>
+        
+        <input type="text" name="diag1" id="diagname1" class="inp" list="diag" value="<?php if(!empty($diag1)){echo $diag1;}   ?>" autocomplete="off">
+              <datalist id="diag">
+                  <option value="自閉スペクトラム症、">
+                  <option value="注意欠如多動性障害">
+  　　　　            <option value="学習障害">
+                  <option value="知的障害">
+              </datalist><br>
+        <label for="treat1">治療</label><br>
+        
+        <input type="text" name="treat1" id="treat1" class="inp" list="treat" value="<?php if(!empty($treat1)){echo $treat1;}   ?>" autocomplete="off" value="<?php if(!empty($treat1)){echo $treat1;}   ?>">
+              <datalist id="treat">
+                  <option value="相談">
+                  <option value="薬物療法">
+  　　　　            <option value="言語療法">
+                  <option value="作業療法">
+                  <option value="理学療法">
+                  <option value="リハビリテーション">
+              </datalist><br>
+        <label for="res1"></label><br>
+        <select id="res1" name="res1" class="inp" value="<?php if(!empty($res1)){echo $res1;}   ?>" >
+          <option value="軽快" selected>軽快</option>
+          <option>不変</option>
+          <option>増悪</option>
+        </select><br><br>
+        <span class="line">-------------------------------------</span><br>
+        <label for="hosp2">病院名</label><br>
+        <input type="text" name="hosp2" id="hosp2" class="inp" list="hosp" placeholder="病院名" autocomplete="off" value="<?php if(!empty($hosp2)){echo $hosp2;}   ?>" class="inp">"">
+              <datalist id="hosp">
+                  <option value="旭川荘南愛媛病院">
+                  <option value="愛媛県立子ども療育センター">
+  　　　　            <option value="市立宇和島病院">
+                  <option value="愛媛大学医学部付属病院">
+              </datalist><br>
+        <label for="stm2">診療開始</label><br>
+        <input type="month" name="stm2" id="stm2" value="<?php if(!empty($stm2)){echo $stm2;}   ?>" class="inp"><br>
+        <label for="em2">診療終了</label><br>
+        <input type="month" name="em2" id="em2" value="<?php if(!empty($em2)){echo $em2;}   ?>" class="inp"><br>
+        <label for="adm2">入院</label><br>
+        <select id="adm2" name="adm2" class="inp" value="<?php if(!empty($adm2)){echo $adm2;}   ?>">
+          <option value="入院">入院</option>
+          <option value="外来"　selected>外来</option>
+          <option value=""  selected ></option>
+        </select><br>
+        <label for="diag2">病名</label><br>
+        <input type="text" name="diag2" id="diagname2" class="inp" list="diag" value="<?php if(!empty($diag2)){echo $diag2;}   ?>" autocomplete="off">
+              <datalist id="diag">
+                  <option value="自閉スペクトラム症、">
+                  <option value="注意欠如多動性障害">
+  　　　　         <option value="学習障害">
+                  <option value="知的障害">
+                  <option value="" selected >
+              </datalist><br>
+        <label for="treat2">治療</label><br>
+        <input type="text" name="treat2" id="treat2" class="inp" list="treat" value="<?php if(!empty($treat2)){echo $treat2;}   ?>" autocomplete="off">
+              <datalist id="treat">
+                  <option value="相談">
+                  <option value="薬物療法">
+  　　　　            <option value="言語療法">
+                  <option value="作業療法">
+                  <option value="理学療法">
+                  <option value="リハビリテーション">
+              </datalist><br>
+        <label for="res2">転帰</label><br>
+        <select id="res2" name="res2" class="inp" value="<?php if(!empty($res2)){echo $res2;}   ?>">
+          <option selected>軽快</option>
+          <option>不変</option>
+          <option>増悪</option>
+          <option selected></option>
+        </select><br><br>
+        <span class="line">-------------------------------------</span><br>
+        <label for="hosp3">病院名</label><br>
+        <input type="text" name="hosp3" id="hosp3" class="inp" list="hosp" value="<?php if(!empty($hosp3)){echo $hosp3;}   ?>" autocomplete="off">
+              <datalist id="hosp">
+                  <option value="旭川荘南愛媛病院">
+                  <option value="愛媛県立子ども療育センター">
+  　　　　            <option value="市立宇和島病院">
+                  <option value="愛媛大学医学部付属病院">
+              </datalist><br>
+        <label for="stm3">診療開始</label><br>
+        <input type="month" name="stm3" id="stm3" value="<?php if(!empty($stm3)){echo $stm3;}   ?>" class="inp"><br>
+        <label for="em3">診療終了</label><br>
+        <input type="month" name="em3" id="em3" value="<?php if(!empty($em3)){echo $em3;}   ?>" class="inp"><br>
+        <label for="adm3">入院</label><br>
+        <select id="adm3" name="adm3" class="inp" value="<?php if(!empty($adm3)){echo $adm3;}   ?>">
+          <option>入院</option>
+          <option>外来</option>
+          <option selected></option>
+        </select><br>
+        <label for="diag3">病名</label><br>
+        <input type="text" name="diag3" id="diagname3" class="inp" list="diag" value="<?php if(!empty($diag2)){echo $diag2;}   ?>" autocomplete="off" value="<?php if(!empty($diag2)){echo $diag2;}   ?>">
+              <datalist id="diag">
+                  <option value="自閉スペクトラム症、">
+                  <option value="注意欠如多動性障害">
+  　　　　            <option value="学習障害">
+                  <option value="知的障害">
+              </datalist><br>
+        <label for="treat3">治療</label><br>
+        <input type="text" name="treat3" id="treat3" class="inp" list="treat" value="<?php if(!empty($treat3)){echo $treat3;}   ?>" autocomplete="off">
+              <datalist id="treat">
+                  <option value="相談">
+                  <option value="薬物療法">
+  　　　　            <option value="言語療法">
+                  <option value="作業療法">
+                  <option value="理学療法">
+                  <option value="リハビリテーション">
+              </datalist><br>
+        <label for="res3">転帰</label><br>
+        <select id="res3" name="res3" class="inp" value="<?php if(!empty($res3)){echo $res3;}   ?>">
+          <option>軽快</option>
+          <option>不変</option>
+          <option>増悪</option>
+          <option selected></option>
+        </select><br><br>
+        <span class="line">-------------------------------------</span><br>
+        <label for="hosp4">病院名</label><br>
+        <input type="text" name="hosp4" id="hosp4" class="inp" list="hosp" value="<?php if(!empty($hosp4)){echo $hosp4;}   ?>" autocomplete="off">
+              <datalist id="hosp">
+                  <option value="旭川荘南愛媛病院">
+                  <option value="愛媛県立子ども療育センター">
+  　　　　            <option value="市立宇和島病院">
+                  <option value="愛媛大学医学部付属病院">
+              </datalist><br>
+        <label for="stm4">診療開始</label><br>
+        <input type="month" name="stm4" id="stm4" value="<?php if(!empty($stm4)){echo $stm4;}   ?>" class="inp"><br>
+        <label for="em4">診療終了</label><br>
+        <input type="month" name="em4" id="em4" value="<?php if(!empty($em4)){echo $em4;}   ?>" class="inp"><br>
+        <label for="adm4">入院</label><br>
+        <select id="adm4" name="adm4" class="inp" value="<?php if(!empty($adm4)){echo $adm4;}   ?>" >
+          <option>入院</option>
+          <option>外来</option>
+          <option selected></option>
+        </select><br>
+        <label for="diag4">病名</label><br>
+        <input type="text" name="diag4" id="diagname4" class="inp" list="diag" value="<?php if(!empty($diag4)){echo $diag4;}   ?>" autocomplete="off">
+              <datalist id="diag">
+                  <option value="自閉スペクトラム症、">
+                  <option value="注意欠如多動性障害">
+  　　　　            <option value="学習障害">
+                  <option value="知的障害">
+              </datalist><br>
+        <label for="treat4">治療</label><br>
+        <input type="text" name="treat4" id="treat4" class="inp" list="treat" value="<?php if(!empty($treat4)){echo $treat4;}   ?>" autocomplete="off">
+              <datalist id="treat">
+                  <option value="相談">
+                  <option value="薬物療法">
+  　　　　            <option value="言語療法">
+                  <option value="作業療法">
+                  <option value="理学療法">
+                  <option value="リハビリテーション">
+              </datalist><br>
+        <label for="res4">転帰</label><br>
+        <select id="res4" name="res4" class="inp" value="<?php if(!empty($res4)){echo $res4;}   ?>" >
+          <option >軽快</option>
+          <option>不変</option>
+          <option>増悪</option>
+          <option selected></option>
+        </select><br>
+    </div>
+  </div>
+
+<div id="inpform3" class="inpform">
+    
+    <div class="wrap">
+
+    <div>
+      <label for='phis'>*発育・養育歴</label><br>
+      <textarea id="phis" cols="30" rows="10" name="phis" class="tarea"><?php if(!empty($phis)){echo $phis;}   ?> 
+      </textarea>
+      
+    </div>  
+    <div>
+      <label for="pdata">現症日付</label><br>
+      <input type="date" name="pillnessdate" class="inp" id="pdata" value="<?php if(!empty($pillnessdate)){echo $pillnessdate;}   ?>"><br>
+      <label for="iqdq">知能・発達指数</label><br>
+      <input type="text" name="iqdq" class="inp" id="iqdq" value="<?php if(!empty($iqdq)){echo $iqdq;}   ?>"><br>
+      <label for="tmethod">テスト方式</label><br>
+      <input type="text" name="iqtest" id="iqtest" class="inp" list="tmethod" placeholder="test" autocomplete="off" value="<?php if(!empty($iqtest)){echo $iqtest;}   ?>">
+      
+          <datalist id="tmethod">
+            <option value="WAIS-III">
+            <option value="田中ビネー">
+            <option value="遠城寺式発達検査">
+            <option value="グッドイナフ式知能検査">                
+         </datalist><br>
+        <label for="testday">判定年月日</label><br>
+        <input type="date" name="testday" id="testday" class="inp" value="<?php if(!empty($testday)){echo $testday;}   ?>"><br>
+        <label for="ldother">LDその他</label><br>
+        <input type="text" name="ldother" id="ldother" class="inp" value="<?php if(!empty($ldother)){echo $ldother;}   ?>"><br>
+        <label for="iqother">知能その他</label><br>
+        <input type="text" name="iqother" id="iqother" class="inp" value="<?php if(!empty($iqother)){echo $iqother;}   ?>"><br>
+        <label for="intass">知能面に関するコメント</label><br>
+        <textarea id="inass" name="inass" cols="30" rows="30" class="tarea" value=""><?php if(!empty($inass)){echo $inass;}   ?></textarea><br>
+        <label for="devdother">発達障害その他</label><br>
+        <input type="text" name="devdother" id="devdother" class="inp" value="<?php if(!empty($devdother)){echo $devdother;}   ?>"><br>
+        <label for="dedcom">発達障害に関するコメント</label><br>
+        <textarea id="devdcom" name="devdcom" cols="30" rows="30" class="tarea"><?php if(!empty($devdcom)){echo $devdcom;}   ?></textarea><br>
+        <label for="epiother">てんかんその他</label><br>
+        <input type="text" name="epiother" id="eipother" class="inp" value="<?php if(!empty($epiother)){echo $epiother;}   ?>"><br>
+        <label for="sztype">てんかん発作のタイプ</label><br>
+        <input type="text" name="sztype" id="sztype" class="inp" list="szlist" placeholder="" autocomplete="off" value="<?php if(!empty($sztype)){echo $sztype;}   ?>">
+        <datalist id="szlist">
+            <option value="焦点発作">
+            <option value="全般発作">
+            <option value="分類不能">                 
+        </datalist><br>
+
+        <label for="szfreq">てんかん発作の頻度</label><br>
+        <input type="text" name="szfreq" id="szfreq" class="szfreq" value="<?php if(!empty($szfreq)){echo $szfreq;}   ?>"><br>
+        <label for="epicom">意識障害・てんかんに関するコメント</label><br>
+        <textarea id="epicom" name="epicom" cols="30" rows="30" class="tarea"><?php if(!empty($epicom)){echo $epicom;}   ?></textarea><br>
+
+    </div>
+  </div>
+ </div>
+  <div id="inpform4" class="inpform"> 
+    <div class="wrap">
+      <label for="psother">精神症状その他</label><br>
+        <input type="text" name="psother" id="psother" class="inp" value="<?php if(!empty($psother)){echo $psother;}   ?>"><br>
+        <label for="pscom">精神症状に関するコメント</label><br>
+        <textarea id="pscom" name="pscom" cols="30" rows="30" class="tarea"><?php if(!empty($pscom)){echo $pscom;}   ?></textarea><br>
+        <label for="bhother">問題行動その他</label><br>
+        <input type="text" name="bhother" id="bhother" class="inp" value="<?php if(!empty($bhother)){echo $bhother;}   ?>"><br>
+        <label for="bcom">問題行動に関するコメント</label><br>
+        <textarea id="bcom" name="bcom" cols="30" rows="30" class="tarea"><?php if(!empty($bcom)){echo $bcom;}   ?></textarea><br>
+
+      
+        <label for="charcom">性格特徴</label><br>
+        <select id="charcom" name="charcom" cols="30" rows="20" class="tarea">
+          <option><?php if(!empty($charcom)){echo $charcom;}   ?></option>
+          <option>おとなしい</option>
+          <option>活発</option>
+          <option>感情の起伏が激しい</option>
+          <option>素直</option>
+           <option></option>
+          </select><br>
+        <label for="dlife">日常生活能力の程度</label><br>
+        <textarea type="text" name="dlife" id="dlife" class="tarea" cols="30" rows="30"><?php if(!empty($dlife)){echo $dlife;}   ?></textarea><br>
+        <label for="tassesin"></label>医学的総合判定<br>
+        <textarea type="text" name="tasses" id="tassesin" class="inp" cols="30" rows="30"><?php if(!empty($tasses)){echo $tasses;}   ?></textarea><br>
+        <label for="tcommentin">備考</label><br>
+        <textarea type="text" name="tcomment2" id="tcommentin" class="tarea" cols="30" rows="30"><?php if(!empty($tcomment2)){echo $tcomment2;}   ?></textarea><br>
+
+        <label for="wrday">年月日</label><br>
+        <input type="date" name="wrday" id="wrday" class="inp" value="<?php if(!empty($wrday)){echo $wrday;}   ?>"><br>
+        <label for="hname">病院又は診療所の名称</label><br>
+        <select type="text" name="hname" id="hname" class="inp" value="<?php if(!empty($hname)){echo $hname;}   ?>">
+          <option>旭川荘南愛媛病院</option>
+          <option>愛媛県立子ども療育センター</option>
+          <option></option>
+        </select><br>
+        <label for="dname">診療担当科名</label><br>
+        <select type="text" name="dname" id="dname" class="inp" value="<?php if(!empty($dname)){echo $dname;}   ?>">
+          <option>小児神経科</option>
+          <option>小児科</option>
+          <option></option>
+        </select><br>
+        <label for="haddr">所在地</label><br>
+        <select type="text" name="haddr" id="haddr" class="inp" value="<?php if(!empty($haddr)){echo $haddr;}   ?>">
+          <option>愛媛県北宇和郡鬼北町永野市１６０７番地</option>
+          <option>愛媛県東温市田窪２１３５</option>
+          <option></option>
+        </select><br>
+        <label for="dr">医師氏名</label><br>
+        <select type="text" name="dr" id="dr" class="inp" value="<?php if(!empty($dr)){echo $dr;}   ?>">
+          <option>森本武彦</option>
+          <option>堀内伊作</option>
+          <option>松田博美</option>
+          <option></option>
+        </select><br>
+
+    </div>
+
+    <button id="inpenter" type="submit">*入力</button>
+    </form>
+
+
+
+	<div id="ref1" class="refed">
+		<div class="wrap">
+			<div class="circle1">教育歴</div><br>
+			<div id="nkind" class="circle">不就学</div><br>
+			<div id="wkind" class="circle">就学猶予</div><br>
+			<div class="circle1">小学校</div><br>
+			<div id="paver" class="circle">普通学級</div><br>
+			<div id="psup" class="circle">支援学級</div><br>
+			<div id="pssch" class="circle">支援学校</div><br>
+			<div class="circle1">中学校</div><br>
+			<div id="javer" class="circle">普通学級</div><br>
+			<div id="jsup" class="circle">支援学級</div><br>
+			<div id="jssch" class="circle">支援学校</div><br>
+			<div class="circle1">高校</div><br>
+			<div id="haver" class="circle">普通学級</div><br>
+			<div id="hssch" class="circle">支援学校</div><br>
+			<div id="other" class="circle">その他</div><br><br>
+			
+			<div id="mr" class="circle">知的障害</div><br>
+			<div class="circle1">心理検査</div><br>
+			<div id="iq" class="circle">IQ</div><br>
+			<div id="dq" class="circle">DQ</div><br>
+			<div id="ntest" class="circle">テスト不能</div><br>
+			<div id="msmr" class="circle">最重度</div><br>
+			<div id="smr" class="circle">重度</div><br>
+			<div id="mmr" class="circle">中度</div><br>
+			<div id="slmr" class="circle">軽度</div><br>
+    </div>
+  </div>
+  <div id="ref2" class="refhf">
+		<div class="wrap">
+			<div id="hbd" class="circle">高次脳機能障害</div><br>
+			<div id="apr" class="circle">ア　失行</div><br>
+			<div id="agn" class="circle">イ　失認</div><br>
+			<div id="med" class="circle">ウ　記憶障害</div><br>
+			<div id="attd" class="circle">エ　注意障害</div><br>
+			<div id="exd" class="circle">オ　遂行機能障害</div><br>
+			<div id="sbd" class="circle">カ　社会的行動障害</div><br>
+			<div id="ld" class="circle">　学習障害</div><br>
+			<div id="read" class="circle">ア　読み</div><br>
+			<div id="write" class="circle">イ　書き</div><br>
+			<div id="calc" class="circle">ウ　算数</div><br>
+			<div id="ldotherb" class="circle"> エ　その他</div><br>
+			<div id="fother" class="circle">　その他</div><br>
+
+			<div id="msrd" class="circle">　1 相互的な社会関係の質的障害</div><br>
+			<div id="comd" class="circle">　2 言語コミュニケーションの障害</div><br>
+			<div id="sterd" class="circle">　3 限定した常同的な関心と行動</div><br>
+			<div id="otherdev" class="circle">　4 その他</div><br>
+			<div id="cons" class="circle">　1 意識障害</div><br>
+			<div id="deli" class="circle">　2 （夜間）せん妄</div><br>
+			<div id="twi" class="circle">　3 もうろう</div><br>
+			<div id="dera" class="circle">　4 錯乱</div><br>
+			<div id="epi" class="circle">　5 てんかん発作</div><br>
+			<div id="sul" class="circle">　6 不機嫌症</div><br>
+			<div id="otherep" class="circle">　7 その他</div><br>
+			てんかん頻度<br>
+			<div id="efreq1" class="circle">　　年間</div><br>
+			<div id="efreq2" class="circle">　　月</div><br>
+			<div id="efreq3" class="circle">　　週</div><br>
+		</div>
+	</div>
+	<div id="ref3" class="refps">
+		<div class="wrap">
+			<div id="hal" class="circle">　1 幻覚</div><br>
+			<div id="del" class="circle">　2 妄想</div><br>
+			<div id="auti" class="circle">　3 自閉</div><br>
+			<div id="idl" class="circle">　4 無為</div><br>
+			<div id="emfl" class="circle">　5 感情の平板化</div><br>
+			<div id="anx" class="circle">　6 不安</div><br>
+			<div id="fear" class="circle">　7 恐怖</div><br>
+			<div id="compul" class="circle">　8 強迫行為</div><br>
+			<div id="thoud" class="circle">　9 思考障害</div><br>
+			<div id="hypo" class="circle">　10 心気症</div><br>
+			<div id="addi" class="circle">　11 中毒嗜癖</div><br>
+			<div id="depr" class="circle">　12 うつ状態</div><br>
+			<div id="overall" class="circle">　13 そう状態</div><br>
+			<div id="otherps" class="circle">　14 その他</div><br>
+
+			<div id="excite" class="circle">　1 興奮</div><br>
+			<div id="viol" class="circle">　2 暴行</div><br>
+			<div id="hyperact" class="circle">　3 多動</div><br>
+			<div id="rej" class="circle">　4 拒絶</div><br>
+			<div id="suic" class="circle">　5 自殺企図</div><br>
+			<div id="sinj" class="circle">　6 自傷</div><br>
+			<div id="twp" class="circle">　7 破衣</div><br>
+			<div id="uncl" class="circle">　8 不潔</div><br>
+			<div id="ars" class="circle">　9 放火・弄火</div><br>
+			<div id="dprop" class="circle">　10 器物破損</div><br>
+			<div id="prow" class="circle">　11 徘徊浮浪</div><br>
+			<div id="steal" class="circle">　12 盗み</div><br>
+			<div id="sesc" class="circle">　13 性的逸脱行為</div><br>
+			<div id="excp" class="circle">　14 排泄の問題</div><br>
+			<div id="uinco" class="circle">　 尿失禁</div><br>
+			<div id="sinco" class="circle">　 便失禁</div><br>
+			<div id="protub" class="circle">　 便こね</div><br>
+			<div id="otherexc" class="circle">　 その他</div><br>
+			<div id="dietp" class="circle">　15 食事の問題</div><br>
+			<div id="refeat" class="circle">　拒食</div><br>
+			<div id="diffood" class="circle">　異食</div><br>
+			<div id="glut" class="circle">　大食</div><br>
+			<div id="litfood" class="circle">　小食</div><br>
+			<div id="unbdiet" class="circle">　偏食</div><br>
+			<div id="othereat" class="circle">　その他</div><br>
+			<div id="otherbeh" class="circle">　16 その他</div><br>
+		</div>
+	</div>
+	 <div id="ref4" class="refbh">
+		<div class="wrap">
+   
+			
+			<div class="circle1">1 食事</div><br>
+			<div id="diet1" class="circle">全介助</div><br>
+			<div id="diet2" class="circle">半介助</div><br>
+			<div id="diet3" class="circle">自立</div><br>
+			<div class="circle1">2 洗面</div><br>
+			<div id="wf1" class="circle">全介助</div><br>
+			<div id="wf2" class="circle">半介助</div><br>
+			<div id="wf3" class="circle">自立</div><br>
+			<div class="circle1">3 排泄</div><br>
+			<div id="ex1" class="circle">おむつ必要</div><br>
+			<div id="ex2" class="circle">・おむつ不要</div><br>
+			<div id="ex3" class="circle">全介助</div><br>
+			<div id="ex4" class="circle">・半介助</div><br>
+			<div id="ex5" class="circle">・自立</div><br>
+			<div class="circle1">4 衣服</div><br>
+			<div id="clo1" class="circle">脱げない</div><br>
+			<div id="clo2" class="circle">・着れない</div><br>
+			<div id="clo3" class="circle">ボタン不能</div><br>
+			<div id="clo4" class="circle">・自立</div><br>
+			<div class="circle1">5 入浴</div><br>
+			<div id="ba1" class="circle">全介助</div><br>
+			<div id="ba2" class="circle">半介助</div><br>
+			<div id="ba3" class="circle">自立</div><br>
+			<div class="circle1">6 危険物</div><br>
+			<div id="ris1" class="circle">全くわからない</div><br>
+			<div id="ris2" class="circle">・特定の物</div><br>
+			<div id="ris3" class="circle">場所はわかる</div><br>
+			<div id="ris4" class="circle">・大体わかる</div><br>
+			<div class="circle1">7 睡眠</div><br>
+			<div id="sle1" class="circle">夜眠らず騒ぐ</div><br>
+			<div id="sle2" class="circle">・時々不眠</div><br>
+			<div id="sle3" class="circle">寝ぼける</div><br>
+			<div id="sle4" class="circle">・問題なし</div><br>
+
+			<div id="cdeg1" class="circle">常に厳重な注意を必要とする</div><br>
+			<div id="cdeg2" class="circle">随時一応の注意を必要とする</div><br>
+			<div id="cdeg3" class="circle">ほとんど必要ない</div><br>
+			
+
+		
+		</div>	
+		<button id="itemsenter">項目入力</button>
+	</div>
+
+ <div id="on21x4">
+                                  <div id="" class="disp"><input id="" class="inbox" type="" name="" value="13"></div>
+                              </div>
