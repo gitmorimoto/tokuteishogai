@@ -1,5 +1,5 @@
 
-export function initCalendar(output)
+export function initCalendar(onSelectDate)
 {  
 
     function makeCalendar(year,month)
@@ -40,30 +40,24 @@ export function initCalendar(output)
 
         function completeCalendar(firstDayofWeek,lastDay)
         {
-                let cellObj=[];
+                let calCellObj=[];
                 let d=1;
                 console.log('firstDayofWeek='+firstDayofWeek);
                 console.log('lastDay='+lastDay);
                 for(let i=0;i<42;i++)
                 {
-                    cellObj[i]=document.getElementById('cell'+i);
-                    //cellObj[i].style.color='white';
-                    cellObj[i].style.color = "black";
-                    cellObj[i].style.background = "yellow";
-                    cellObj[i].style.border = "1px solid red";
+                    calCellObj[i]=document.getElementById('cal-cell'+i);
+                    calCellObj[i].style.color='white';
+                    
                 }
                 
               
                 for(let j=firstDayofWeek;j<lastDay+firstDayofWeek;j++)
                 {
                     //cell1Obj[i].style.background="orange";
-                        console.log('d='+d);
-                        console.log(cellObj[j]);
-                        console.log(cellObj[j].offsetHeight); 
-                        console.log(cellObj[j].offsetWidth);
-                        cellObj[j].textContent=d;
-                        console.log("after set:", cellObj[j].textContent);
-                        console.log(cellObj[j].getBoundingClientRect());
+                        
+                        calCellObj[j].textContent=d;
+                        
                         d++;
                  
                 }
@@ -88,10 +82,11 @@ export function initCalendar(output)
     let m=0;
     var d=0;
     var nB=0;
+    
+    //console.log(nengoObj);
     warekiObj.hidden=false;
     seirekiObj.hidden=true;
 
-    //console.log(nengoObj);
 
     for(let i=0;i<4;i++)
     {
@@ -180,21 +175,22 @@ export function initCalendar(output)
 
             let dObj=[];
             let sD="";
-            let inpObj = document.getElementById(output);
+           
+            
             
             for(let i=0;i<42;i++)
             {
-         	    dObj[i]= document.getElementById('cell'+i);
+         	    dObj[i]= document.getElementById('cal-cell'+i);
                 dObj[i].addEventListener('click',function(){
                     dObj[i].style.background="orange";
                     let d=dObj[i].textContent;
                     m=('00'+String(m)).slice(-2);
                     d=('00'+String(d)).slice(-2);
                     sD=y+'-'+m+'-'+d;
-                    //console.log('sD='+sD);
+                    console.log('sD='+sD);
                     //console.log('dateBoxFlag='+dateBoxFlag);
+                    onSelectDate(sD);
 
-                    inpObj.value = sD;
                     
                     
                     

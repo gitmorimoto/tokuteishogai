@@ -79,7 +79,7 @@ class Calendar
                    for($j=0;$j<7;$j++)
                    {
                       $rN=7*$i+$j;
-                      echo '<div id="cell'.$rN.'" class="cell" style="width:14%;height:100%;border-right:1px solid white;font-size:14px;">';
+                      echo '<div id="cal-cell'.$rN.'" class="cal-cell" style="width:14%;height:100%;border-right:1px solid white;font-size:14px;">';
                         //echo 'c'.$rN;
                       echo '</div>' ;
                    }

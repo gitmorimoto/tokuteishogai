@@ -24,17 +24,18 @@ $calObj=new Calendar();
 
 </head>
 <!--  <div id="" class=""></div> -->
-<body>
-    <div id="container0" class="container" style="width:99% ;height:150px;border:1px solid white">
+<body style="position:relative;">
+    <div id="container0" class="container" style="width:99% ;height:250px;border:1px solid white">
 
     </div>
-    <div id="instruction"  class="" style="width:99% ;height:30px;
+    <div id="instruction"  class="" style="width:99% ;height:50px;
     border:1px solid white;margin-top:2px;margin-bottom:2px">
     </div>
-    <div id="container1" class="container" style="width:99% ;height:500px;border:1px solid white">
+    <div id="container1" class="container" style="width:99% ;height:200px;border:1px solid white">
     </div>
     
-    <div id="calendar" style="width:600px;height:200px;border:2px solid white;color:white">
+    <div id="calendar" style="width:500px;height:200px;border:2px solid white;
+    color:white;position:absolute;left:50%;top:50%">
         <?php
             $calObj->calFrame(0);
         ?>
