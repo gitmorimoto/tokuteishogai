@@ -1,5 +1,7 @@
 <?php
+include('class.Calendar.php');
 
+$calObj=new Calendar();
 
 ?>
 
@@ -11,7 +13,7 @@
 	
     <title></title>
 	
-	<script type="text/javascript" src="./js/inpForm.js"></script>
+	<script type="module" src="./js/inpForm.js"></script>
     <style>
         body{
             background-color:black;
@@ -23,10 +25,20 @@
 </head>
 <!--  <div id="" class=""></div> -->
 <body>
-    <div id="container0" class="container" style="width:99% ;height:100px;border:1px solid white">
+    <div id="container0" class="container" style="width:99% ;height:150px;border:1px solid white">
 
+    </div>
+    <div id="instruction"  class="" style="width:99% ;height:30px;
+    border:1px solid white;margin-top:2px;margin-bottom:2px">
     </div>
     <div id="container1" class="container" style="width:99% ;height:500px;border:1px solid white">
     </div>
+    
+    <div id="calendar" style="width:600px;height:200px;border:2px solid white;color:white">
+        <?php
+            $calObj->calFrame(0);
+        ?>
+    </div>
+    
 </body>
 </html>

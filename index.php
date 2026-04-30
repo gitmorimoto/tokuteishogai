@@ -1,4 +1,5 @@
 <?php
+/*
 session_start();
 $rowMax=100;
 $selCaseNumber=file_get_contents('selCaseNumber.dat');
@@ -14,6 +15,7 @@ if(file_exists('caseArray.dat')){
 	$caseArray=array();
 }
 //print_r($caseArray);
+*/
 ?>
 
 
@@ -27,11 +29,9 @@ if(file_exists('caseArray.dat')){
 	
     <title></title>
 	
-	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="module" src="js/index.js"></script>
 	
 
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" >
-  
 
 </head>
 <body>
@@ -71,7 +71,7 @@ if(file_exists('caseArray.dat')){
       	</div >
 
 		<div id="topx3" >
-				<button class="bbox" id="exam">チェック</button>
+				<button class="bbox" id="inpFormBtn">入力フォーム</button>
 				<button class="bbox" id="confirm">確定</button>
 				<button class="bbox" id="clear">クリア</button>
 				<button class="bbox" id="mody">修正</button>
@@ -98,16 +98,7 @@ if(file_exists('caseArray.dat')){
 	
 	<div id="mid">
 		    <div id="refList" style="width:20%;height:100%;overflow-y: scroll;border:2px solid red" >
-		    	<?php
-		    	for($i=0;$i<$rowMax;$i++)
-		    	{
-		    		echo '<div id="selCase'.$i.'" class="selCase" style="width:100%;height:30px;border-bottom:1px solid yellow;font-size:12px">*';
-		    		echo '</div>';
-		    		echo '<div  id="selCaseFileName'.$i.'" class="selCaseFileName" style="width:100%;height:30px;border-bottom:1px solid yellow;font-size:12px;display:none"> ';
-		    		echo '</div>';
-		    	}
-
-		    	?>
+		    	
 		    </div>
 			<div class="wrap" id="wrap1" style="width:80%">
 				   
@@ -166,15 +157,15 @@ if(file_exists('caseArray.dat')){
 										<div id="y2x2y1" class="" style="width:20%;font-size:9px">〒</div>
 										<div id="y2x2y2" class="" style="width:80%">
 											<div id="disp4" class="" style="width:98%;font-size:6px">
-												<input  class="inp" type="text" id="zip" name="zip" value="<?php if(!empty($scase['postno'])){echo $scase['postno'];} ?>"><br>
-												<input id="t4" class="inp" type="hidden" name="" >
+												<input  class="inp" type="text" id="t4" name="zip" value="<?php if(!empty($scase['postno'])){echo $scase['postno'];} ?>"><br>
+												
 											</div>
 										</div>
 								</div>
 								<div id="y2x3" class="exp" style="font-size:9px;border:">
 									<div id="disp5" class="" style="font-size:9px">
-										<input id="address"  class="inp" type="text"  name="address"  value="<?php if(!empty($scase['address'])){echo $scase['address'];} ?>">
-										<input id="t5"  class="inp" type="hidden"  name="">
+										
+										<input id="t5"  class="inp" type=""  name="">
 									</div>
 								</div>
 								<div id="y2x4" class="exp">

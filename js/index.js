@@ -1,5 +1,10 @@
+
+
 document.addEventListener('DOMContentLoaded',function(){
+    let output='frame3';//selected date is set in output element.
+    
     console.log('js loaded');
+    const inpFormBtnObj = document.getElementById('inpFormBtn');
     const inpObj = document.querySelectorAll('.inp');
     console.log(inpObj.length);
     const noOfInpData = inpObj.length;
@@ -14,4 +19,11 @@ document.addEventListener('DOMContentLoaded',function(){
         markObj[i].style.borderRadius='10px';
         markObj[i].style.border='2px solid yellow';
     }
+
+    inpFormBtnObj.addEventListener('click',function(){
+        location.href='inpForm.php';
+    });
+
+
+
 })
