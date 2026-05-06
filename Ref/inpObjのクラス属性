@@ -1,0 +1,63 @@
+❌ Problem 1: class is not valid in JS
+inpObj[i].class = 'inp';
+
+This does nothing useful. In JavaScript you must use:
+
+inpObj[i].className = 'inp';
+// or (better)
+inpObj[i].classList.add('inp');
+⚠️ Problem 2: height mismatch
+frameObj[i].style.height = '99%';
+inpObj[i].style.height = '100%';
+
+This can create subtle layout overflow issues depending on the parent element.
+If you don’t have a specific reason, keep them consistent:
+
+frameObj[i].style.height = '100%';
+⚠️ Problem 3: performance (not critical but good to know)
+
+Appending elements inside a loop like this:
+
+container1.appendChild(frameObj[i]);
+
+causes 69 DOM reflows.
+
+A better pattern is to use a DocumentFragment:
+
+const fragment = document.createDocumentFragment();
+
+for (let i = 0; i < 69; i++) {
+    const frame = document.createElement('div');
+    frame.style.width = '100%';
+    frame.style.height = '100%';
+    frame.style.border = '1px solid white';
+    frame.id = 'frame' + i;
+
+    const inp = document.createElement('textarea');
+    inp.style.width = '100%';
+    inp.style.height = '100%';
+    inp.style.background = 'darkgreen';
+    inp.style.color = 'white';
+    inp.id = 'inp' + i;
+    inp.classList.add('inp');
+    inp.value = i;
+
+    frame.appendChild(inp);
+    fragment.appendChild(frame);
+}
+
+container1.appendChild(fragment);
+⚠️ Problem 4: are arrays initialized?
+
+Make sure you declared:
+
+let frameObj = [];
+let inpObj = [];
+
+Otherwise you'll get unexpected behavior.
+
+✔️ Summary
+Fix class → use classList ✅
+Consider DocumentFragment for efficiency ⚡
+Watch your height settings 📏
+Ensure arrays are initialized 🧠

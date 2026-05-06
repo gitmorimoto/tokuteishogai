@@ -1,0 +1,10 @@
+@media screen{
+#list_container{
+   overflow-y: scroll;
+    -ms-overflow-style: none;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+}
+}
