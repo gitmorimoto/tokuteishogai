@@ -6,4 +6,5 @@
  $hospitalGroup = [17,23,29,35];
  $treatmentGroup = [21,27,33,39];
  $outcomeGroup = [22,28,34,40];
+ $pathToDatabase = '../database/tokuteishogai';
 ?>

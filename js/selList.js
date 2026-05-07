@@ -13,6 +13,7 @@ export function makeList(dataArray){
         liObj.appendChild(span0Obj);
         liObj.appendChild(span1Obj); 
         listContainer.appendChild(liObj);
+        listContainer.style.backgroundColor='blue';
         liObj.addEventListener('click', () => {
             span0Obj.style.color = 'orange';
             console.log(span0Obj.textContent);

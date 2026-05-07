@@ -3,6 +3,7 @@ import {getAddress} from './zipCode.js';
 import {makeList} from './selList.js';
 import {getRefData} from './refData.js';
 import {forward} from './forward.js';
+import {backward} from './getBackData.js';
 document.addEventListener('DOMContentLoaded',function(){
 
 const container0Obj = document.getElementById('container0');
@@ -33,14 +34,23 @@ row3.style.display = 'flex';
 container0Obj.appendChild(row3);
 const cellObj = [];
 const itemList = [
-    'ID','ふりがな','名前','生年月日','郵便番号','住所','傷病名','主な傷病の発症日','合併精神障害の発症日','身体障害の発症日',
-    '合併精神障害','合併身体障害','④のため初めて医師の診断を受けた日','将来再判定までの期間','発病以来の経過','陳述者の氏名','本人との関係',
-    '病院名','治療開始時期','治療終了時期','病名','治療','転機','病院名','治療開始時期','治療終了時期','病名','治療','転機','病院名','治療開始時期','治療終了時期','病名','治療','転機'
-    ,'病院名','治療開始時期','治療終了時期','病名','治療','転機','発育・教育歴','障害の状態','知能指数又は発達指数','テスト方式','判定年月日',
-    ' 学習障害:その他','知能障害等:その他','知能障害等の症状・処方','発達障害関連症状：その他','発達障害関連症状の症状・処方',
-    '意識障害・てんかん：その他','てんかん発作のタイプ','意識障害・てんかんの症状・処方','精神症状・その他','精神症状・その他の症状・処方',
-    '問題行動・習癖：その他','問題行動・習癖の症状・処方','性格特徴','日常生活能力の程度を記載','備考','記載日',
-    '病院又は診療所の名称','所　在　地','診療担当科名','医　師　氏　名'
+    'ID','ふりがな','名前','生年月日','郵便番号',
+    '住所','傷病名','主な傷病の発症日','合併精神障害の発症日','身体障害の発症日',
+    '合併精神障害','合併身体障害','④のため初めて医師の診断を受けた日','将来再判定までの期間','発病以来の経過',
+    '陳述者の氏名','本人との関係','病院名','治療開始時期','治療終了時期',
+
+    '病名','治療','転機','病院名','治療開始時期',
+    '治療終了時期','病名','治療','転機','病院名',
+    '治療開始時期','治療終了時期','病名','治療','転機'
+    ,'病院名','治療開始時期','治療終了時期','病名','治療',
+
+    '転機','発育・教育歴','障害の状態','知能指数又は発達指数','テスト方式',
+    '判定年月日',' 学習障害:その他','知能障害等:その他','知能障害等の症状・処方','発達障害関連症状：その他',
+    '発達障害関連症状の症状・処方','意識障害・てんかん：その他','てんかん発作のタイプ','発作頻度','意識障害・てんかんの症状・処方',
+    '精神症状・その他','精神症状・その他の症状・処方','問題行動・習癖：その他','問題行動・習癖の症状・処方','性格特徴',
+    
+    '日常生活能力の程度を記載','備考','記載日','病院又は診療所の名称','所　在　地',
+    '診療担当科名','医　師　氏　名'
 ];
 for(let i=0;i<20;i++)
 {
@@ -122,7 +132,7 @@ for(let i=0;i<69;i++)
     inp.style.color = 'white';
     inp.id = 'inp' + i;
     inp.classList.add('inp');
-    inp.value = 'test'+i;
+    //inp.value = 'test'+i;
 
     frame.appendChild(inp);
     fragment.appendChild(frame);
@@ -201,6 +211,14 @@ init(function(num){
         case 12:
         case 18:
         case 19:
+        case 24:
+        case 25:
+        case 30:
+        case 31:
+        case 36:
+        case 39:
+        case 45:
+        case 62:
 
             itemListObj.style.display = "none";
             calendarObj.style.display = "block";
@@ -222,6 +240,7 @@ init(function(num){
         case 6:
         case 10:
         case 11:
+        case 13:
         case 16:
         case 17:
         case 20:
@@ -232,6 +251,7 @@ init(function(num){
         case 27:
         case 28:
         case 29:
+        case 32:
         case 33:
         case 34:
         case 35:
@@ -239,13 +259,13 @@ init(function(num){
         case 39:
         case 40:
         case 44:
-        case 51:
-        case 58:
+        case 52:
         case 59:
-        case 62:
+        case 60:
         case 63:
         case 64:
         case 65:
+        case 66:
             calendarObj.style.display = "none";
             itemListObj.style.display = "block";
             console.log(getRefData);
@@ -274,4 +294,5 @@ init(function(num){
 })
 //-------------------------------------------------------------------
 forward();
+backward();
 })

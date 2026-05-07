@@ -34,18 +34,18 @@ body,html{height:100%;width:100%;}
 #y1x4{width:35mm;height:100%;border-right: 1px solid }
 #y1x5{width:42mm;height:100%;border-right:}
 
-#y1x2y1{width:100%;height:3mm;border-right:;background: ;border-bottom:1px dotted white }
-#y1x2y2{width:100%;height:4mm;border-right: ;background:}
+#y1x2y1{width:100%;height:3mm;border-bottom:1px dotted white }
+#y1x2y2{width:100%;height:4mm ;background:}
 
 #y2x1{width:31.8mm;height:100%;border-right: 1px solid white}
-#y2x2{width:10mm;height:100%;border-right:;display:flex; }
+#y2x2{width:10mm;height:100%;display:flex; }
 #y2x3{width:56mm;height:100%;border-right: 1px solid white;}
 #y2x4{width:35mm;height:100%;border-right: 1px solid white}
 #y2x5{width:30mm;height:100%;border-right:;margin-top:0mm; margin-left:1mm;}
 
 
-#y2x2y1{width:5mm;height:2mm;margin-top:2mm; }
-#y2x2y2{width:30mm;height:5mm;margin-top:2mm; }
+#y2x2y1{width:5mm;height:2mm; }
+#y2x2y2{width:30mm;height:5mm; }
 
 #y3x1{width:32mm;height:100%;border-right: 1px solid white}
 #y3x2{width:50mm;height:100%;border-right: 1px solid white;}
@@ -91,12 +91,12 @@ body,html{height:100%;width:100%;}
 #y5x1y3{width:50mm;height:20mm;border:}
 
 #y5x2y1{width:100%;height:8mm;display: flex}
-#y5x2y2{width:100%;height:26mm;border-left:1px solid white }
-
+/*#y5x2y2{width:100%;height:26mm;border-left:1px solid white }*/
+#treatmentHist{width:100%;height:26mm;border: }
 #y5x2y1x1{width:30%;height:100%;display: flex}
 #y5x2y1x2{width:20%;height:100%;display: flex}
 #y5x2y1x3{width:20%;height:100%;display: flex}
-#y5x2y1x4{width:30%;height:100%;display: flex}
+#y5x2y1x4{width:30%;height:100%;border:}
 
 #y5x2y2y1{width:100%;height:3.5mm;display: flex;border-bottom: 0.5px solid yellow}
 #y5x2y2y2{width:100%;height:3.6mm;display: flex;border-bottom:  }
@@ -476,7 +476,7 @@ body,html{height:100%;width:100%;}
 #y11y5x1{width:40mm;height:100%;border-right:1px solid yellow;display: }
 #y11y5x2{width:60mm;height:100%;border-right:1px solid yellow;display: }
 #y11y5x3{width:20mm;height:100%;border-right:1px solid yellow;display: }
-#y11y5x4{width:40mm;height:100%;border-bottom:;display: }
+#y11y5x4{width:40mm;height:3.2mm;display: }
 #y11y5x5{width:5mm;height:100%;border-bottom:;display: }
 
 .y{border-bottom: 1px solid white}
@@ -489,11 +489,11 @@ body,html{height:100%;width:100%;}
 .inboxs{width:100%;height:100%;background: darkgreen;color:white;}
 .adm{width:90%;height:90%;margin-left:-2mm ;font-size: 9px;display: flex}
 .mk{font-size: 9px}
-#t1{width:200%;height:200%;background:darkgreen;color:white;position:relative;left:-10px;}
-#t2{width:90%;height:15px;background:darkgreen ;color:white;}
-#disp1{width:90%;height:100%; }
-#disp2{width:100%;height:100%;margin-left:2mm; }
-#disp3{width:100%;height:100%;margin-left:2mm;margin-top:2mm; }
+#t1{width:100%;height:40%;background:darkgreen;color:white;}
+#t2{width: 100%;height:60%;background:darkgreen ;color:white;}
+#disp1{width: 100%;height:100%; }
+#disp2{width:100%;height:100%; }
+#disp3{width:100%;height:100%; }
 #disp5{width:90%;height:90%;margin-left:2mm;margin-top:0mm; }
 #disp7{width:100%;height:100%;margin-left:2mm;margin-top:2mm; }
 #disp8{width:100%;height:100%;margin-left:2mm;margin-top:2mm; }
@@ -505,34 +505,12 @@ body,html{height:100%;width:100%;}
 #disp15{width:100%;height:50%;margin-left:2mm; margin-top:2mm;}
 
 
-#disp16{width:100%;height:100%;border:1px solid yellow; margin-top:;}
-#disp17{width:100%;height:100%;border:1px solid yellow; margin-top:;}
-#disp18{width:100%;height:100%;border:1px solid yellow; margin-top:;}
-#disp19{width:100%;height:100%;border:1px solid yellow; margin-top:;}
-#disp20{width:100%;height:100%;border:1px solid yellow; margin-top:;}
-#disp21{width:100%;height:100%;border:1px solid yellow; margin-top:;}
+#disp16{width:100%;height:100%;}
 
-#disp22{width:120%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp23{width:150%;height:100%;border:1px solid yellow;margin-left:-10mm; margin-top:;}
-#disp24{width:150%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp25{width:160%;height:100%;border:1px solid yellow;margin-left:-4mm; margin-top:;}
-#disp26{width:140%;height:100%;border:1px solid yellow;margin-left:-3mm; margin-top:;}
-#disp27{width:140%;height:100%;border:1px solid yellow;margin-left:-6mm margin-top:;}
 
-#disp28{width:120%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp29{width:150%;height:100%;border:1px solid yellow;margin-left:-10mm; margin-top:;}
-#disp30{width:150%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp31{width:160%;height:100%;border:1px solid yellow;margin-left:-4mm; margin-top:;}
-#disp32{width:140%;height:100%;border:1px solid yellow;margin-left:-3mm; margin-top:;}
-#disp33{width:140%;height:100%;border:1px solid yellow;margin-left:-6mm margin-top:;}
 
-#disp34{width:120%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp35{width:150%;height:100%;border:1px solid yellow;margin-left:-10mm; margin-top:;}
-#disp36{width:150%;height:100%;border:1px solid yellow;margin-left:-7mm; margin-top:;}
-#disp37{width:160%;height:100%;border:1px solid yellow;margin-left:-4mm; margin-top:;}
-#disp38{width:140%;height:100%;border:1px solid yellow;margin-left:-3mm; margin-top:;}
-#disp39{width:140%;height:100%;border:1px solid yellow;margin-left:-6mm margin-top:;}
-#disp58{width:90%;height:90%;margin-left:2mm margin-top:1mm;;}
+
+
 
 #period1{width:100%;height:100%;margin-left:-7mm;}
 #period2{width:100%;height:100%;margin-left:-7mm;}
@@ -542,10 +520,10 @@ body,html{height:100%;width:100%;}
 
 
 #disp61{width:50%;height:100%;margin-left: 10mm: }
-#disp66{width:50%;height:50%;margin-left: 5mm; margin-top:2mm;}
+#disp66{width:100%;height:100%;display:flex;color:white" }
 
 
-#t3{width:90%;height:100%;background: darkgreen;color:white;}
+#t3{width:95%;height:90%;background: darkgreen;color:white;border:}
 #zip{width:90%;height:70%;background: darkgreen;color:white;}
 .bbox{width:50px;height:30px;font-size: 10px}
 
@@ -595,10 +573,11 @@ body,html{height:100%;width:100%;}
 
 
 #t15{margin-left:1mm;margin-top:}
-#t16{margin-left:;margin-top:}
+
 #t17{margin-left:1mm;margin-top:}
 #t10{margin-left:2mm;margin-top:3mm;width:80%;}
 #t11{margin-left:2mm;margin-top:3mm;width:80%}
+#t66{width:95%;height:95%;display:}
 .gensyou{ writing-mode: vertical-rl;font-size:11px;margin-left:2mm;}
 
 .fssm{font-size: 10px;transform:scale(0.9);}

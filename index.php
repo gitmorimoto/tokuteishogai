@@ -74,7 +74,7 @@ if(file_exists('caseArray.dat')){
 				<button class="bbox" id="backwardBtn">入力フォーム</button>
 				<button class="bbox" id="confirm">確定</button>
 				<button class="bbox" id="clear">クリア</button>
-				<button class="bbox" id="mody">修正</button>
+				<button class="bbox" id="recover">修正</button>
 
 	    </div>
 
@@ -157,12 +157,12 @@ if(file_exists('caseArray.dat')){
 										<div id="y2x2y1" class="" style="width:20%;font-size:9px">〒</div>
 										<div id="y2x2y2" class="" style="width:80%">
 											<div id="disp4" class="disp" style="width:98%;font-size:6px">
-												<input  class="inp" type="text" id="t4" name="zip" value="<?php if(!empty($scase['postno'])){echo $scase['postno'];} ?>"><br>
+												<input  class="inp" type="text" id="t4" name="zip" ><br>
 												
 											</div>
 										</div>
 								</div>
-								<div id="y2x3" class="exp" style="font-size:9px;border:">
+								<div id="y2x3" class="exp" style="font-size:9px;border">
 									<div id="disp5" class="disp" style="font-size:9px">
 										
 										<input id="t5"  class="inp" type=""  name="">
@@ -178,13 +178,7 @@ if(file_exists('caseArray.dat')){
 								<div id="y2x5" class="exp">
 									<div id="disp6" class="disp" style="width:90%;height:90%;font-size:9px">
 										<input id="t6" class="inp" type="" name="" value="" list="disorders">
-										<datalist id="disorders">
-											<option value="注意欠如多動性障害"></option>
-											<option value="自閉スペクトラム症"></option>
-											<option value="注意欠如多動性障害,自閉スペクトラム症"></option>
-											<option value="知的障害"></option>
-											<option value=""></option>
-										</datalist>
+										
 									</div>
 								</div>
 								
@@ -300,8 +294,8 @@ if(file_exists('caseArray.dat')){
 							</div>
 						</div>
 						<div id="y4x6" class="y">
-							<div id="disp66" class="disp">
-									<input id="t66" type="text" name="" class="inp">
+							<div id="disp13" class="disp">
+									<input id="t13" type="text" name="" class="inp">
 						　　</div>
 						</div>
 						<div id="y4x7" class="y">
@@ -334,8 +328,8 @@ if(file_exists('caseArray.dat')){
 									   		</div>
 									   </div>
 								    	<div id="y5x1y3" class="exp" >	
-								    			<div id="disp13" class="disp" > 
-								    				<textarea cols="20" rows="6" id="t13" class="inp" type="" name="" value=""></textarea>
+								    			<div id="disp14" class="disp" > 
+								    				<textarea cols="20" rows="6" id="t14" class="inp" type="" name="" value=""></textarea>
 								    			</div>
 								    	</div>
 								</div> <!--y5x1----------------------->
@@ -348,8 +342,8 @@ if(file_exists('caseArray.dat')){
 												</div>
 											</div>
 										    <div id="y5x2y1x2" class=""   >
-										    	<div id="disp14" class="disp">
-										    		<input id="t14" class="inp" type="" name="" value="">
+										    	<div id="disp15" class="disp">
+										    		<input id="t15" class="inp" type="" name="" value="">
 										    	</div>
 										    </div>
 										    <div id="y5x2y1x3" class="fs1">
@@ -358,285 +352,18 @@ if(file_exists('caseArray.dat')){
 										    	  </div>
 											</div>
 										    <div id="y5x2y1x4" class="" >
-										    	<div id="disp15" class="disp">
-										    		<input id="t15" class="inp" type="" name="" value="">
+										    	<div id="disp16" class="disp">
+										    		<input id="t16" class="inp" style="width:95%;height:95%" value="">
 										    	</div>
 										    </div>
 										</div>	<!--y5x2y1----------------------->
 
-										<div id="y5x2y2" class="ys1">
-						
-									     	<div id="y5x2y2y1" class="fs">イ　発病以来の治療歴*</div>
-										    <div id="y5x2y2y2">
-										        	<div id="y5x2y2y2x1"></div>
-										        	<div id="y5x2y2y2x2" class="fss">（病院名）</div>
-										        	<div id="y5x2y2y2x3" class="fss">　（治療期間）</div>
-										        	<div id="y5x2y2y2x4" class="fss">（入院・外来別)</div>
-										        	<div id="y5x2y2y2x5" class="fss">（病名）</div>
-										        	<div id="y5x2y2y2x6" class="fss">(主な療法）</div>
-										        	<div id="y5x2y2y2x7" class="fss">（転帰）</div>
-										        	
-									   		</div>
-
-
-								<!--row 1--><div id="y5x2y2y3" style="border:">
-											    <div id="y5x2y2y3x1" class="" style="font-size:9px">
-											       		（ア）
-								<!--hosp0--> 	</div>
-											       <div id="y5x2y2y3x2" class="" >
-											       		<div id="disp16" class="disp">
-											       			<input id="t16" class="inp" type="" name="" value="" list="hospitals1">
-											       			
-											       		</div>
-											  	</div> 
-							<!--first visit-->  <div id="y5x2y2y3x3" class="" 	>
-										         	<div class="stm">
-										         		<div id="disp17" class="disp">
-										         			<input id="t17" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-										         <div class="y5x2y2y3x4" class="fs0">
-										         		<div id="period1" class="period">
-										         		~
-										         		</div>
-										    	 </div>
-							<!--last visit-->   <div id="y5x2y2y3x5" class="exp">
-										         	<div class="em">
-										         		<div id="disp18" class="disp">
-										         			<input id="t18" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-											     <div id="y5x2y2y3x6" class="">
-											       	<div class="adm">
-											       		
-											       			<div id="m5" class="mark">入</div>
-											       			<div id="" class="fs0">・</div>
-											       			<div id="m6" class="mark">外</div>
-											       		
-											       	</div>
-											     </div>
-							<!--diagmpsos-->     <div id="y5x2y2y3x7" class="">
-											       		<div class="diag">
-											       			<div id="disp19" class="disp">
-											       				<input id="t19" class="inp" type="" name="" value="" list="diaglist1">
-											      			 	
-											       			</div>
-											   			</div>
-												 </div>
-							<!--treatment-->     <div id="y5x2y2y3x8" class="">
-											       	   <div class="treat">
-											       		 <div id="disp20" class="disp">
-											       			<input id="t20" class="inp" type="" name="" value="" list="treat1">
-											       			
-											      		</div>
-											      	  </div>
-											     </div>
-							<!--outcome-->     <div id="y5x2y2y3x9" class="">
-											       	
-											       		<div id="disp21" class="disp">
-											      			<input id="t21" class="inp" type="" name="" value="" list="result1"  > 
-											       			
-											      		 </div>
-											   	
-												 </div>
-									<!---->	</div>
-
-										
-											<div id="y5x2y2y4">
-											       <div id="y5x2y2y4x1" class="" style="font-size:9px">
-											       		（イ）
-											   	   </div>
-											       <div id="y5x2y2y4x2" class="fs" >
-											       		<div id="disp22" class="disp">
-											       			<input id="t22" class="inp" type="" name="" value="" list="hospitals1">
-											       			
-											       		</div>
-											  	 </div> 
-										         <div id="y5x2y2y4x3" class="">
-										         	<div class="stm">
-										         		<div id="disp23" class="disp">
-										         			<input id="t23" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-										         <div class="y5x2y2y4x4">
-										         	<div id="period2" class="period">
-										         		~
-										         	</div>
-										    	 </div>
-										         <div id="y5x2y2y4x5" class="exp">
-										         	<div class="em">
-										         		<div id="disp24" class="disp">
-										         			<input id="t24" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-											     <div id="y5x2y2y4x6" class="">
-											       	<div class="adm">
-											       		
-											       			<div id="m7" class="mark">入</div>
-											       			<div id="" class="fs0">・</div>
-											       			<div id="m8" class="mark">外</div>
-											       		
-											       	</div>
-											     </div>
-											     <div id="y5x2y2y4x7" class="">
-											       		<div class="diag">
-											       			<div id="disp25" class="disp">
-											       				<input id="t25" class="inp" type="" name="" value="" list="diaglist1">
-											      			 	
-											       			</div>
-											   			</div>
-												 </div>
-											     <div id="y5x2y2y4x8" class="">
-											       	   <div class="treat">
-											       		 <div id="disp26" class="disp">
-											       			<input id="t26" class="inp" type="" name="" value="" list="treat1">
-											       			
-											      		</div>
-											      	  </div>
-											     </div>
-											     <div id="y5x2y2y4x9" class="">
-											       	
-											       		<div id="disp27" class="disp">
-											       			<input id="t27" class="inp" type="" name="" value="" list="result1"  >
-											       			
-											      		 </div>
-											   	
-												</div>
-										</div>
-
-										<div id="y5x2y2y5">
-											       <div id="y5x2y2y5x1" class="" style="font-size:9px">
-											       		（ウ）
-											   	   </div>
-											       <div id="y5x2y2y5x2" class="fs" >
-											       		<div id="disp28" class="disp">
-											       			<input id="t28" class="inp" type="" name="" value="" list="hospitals1">
-											       			
-											       		</div>
-											  	 </div> 
-										         <div id="y5x2y2y5x3" class="">
-										         	<div class="stm">
-										         		<div id="disp29" class="disp">
-										         			<input id="t29" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-										         <div class="y5x2y2y5x4">
-										         	<div id="period3" class="period">
-										         		~
-										         	</div>
-										    	 </div>
-										         <div id="y5x2y2y5x5" class="exp">
-										         	<div class="em">
-										         		<div id="disp30" class="disp">
-										         			<input id="t30" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-											     <div id="y5x2y2y5x6" class="">
-											       	<div class="adm">
-											       		
-											       			<div id="m9" class="mark">入</div>
-											       			<div id="" class="fs0">・</div>
-											       			<div id="m10" class="mark">外</div>
-											       		
-											       	</div>
-											     </div>
-											     <div id="y5x2y2y5x7" class="">
-											       		<div class="diag">
-											       			<div id="disp31" class="disp">
-											       				<input id="t31" class="inp" type="" name="" value="" list="diaglist1">
-											      			 	
-											       			</div>
-											   			</div>
-												 </div>
-											     <div id="y5x2y2y5x8" class="">
-											       	   <div class="treat">
-											       		 <div id="disp32" class="disp">
-											       			<input id="t32" class="inp" type="" name="" value="" list="treat1">
-											       			
-											      		</div>
-											      	  </div>
-											     </div>
-											     <div id="y5x2y2y5x9" class="">
-											       	
-											       		<div id="disp33" class="disp">
-											       			<input id="t33" class="inp" type="" name="" value="" list="result1"  >
-											       			
-											      		 </div>
-											   	
-												</div>
-										</div>
-
-										<div id="y5x2y2y6">
-											       <div id="y5x2y2y6x1" class="" style="font-size:9px">
-											       		（エ）
-											   	   </div>
-											       <div id="y5x2y2y6x2" class="" >
-											       		<div id="disp34" class="disp">
-											       			<input id="t34" class="inp" type="" name="" value="" list="hospitals1">
-											       			
-											       		</div>
-											  	 </div> 
-										         <div id="y5x2y2y6x3" class="">
-										         	<div class="stm">
-										         		<div id="disp35" class="disp">
-										         			<input id="t35" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-										         <div class="y5x2y2y6x4">
-										         	<div id="period4" class="period">
-										         		~
-										         	</div>
-										    	 </div>
-										         <div id="y5x2y2y6x5" class="exp">
-										         	<div class="em">
-										         		<div id="disp36" class="disp">
-										         			<input id="t36" class="inp" type="" name="" value="">
-										         		</div>
-										         	</div>
-										         </div>
-											     <div id="y5x2y2y6x6" class="">
-											       	<div class="adm">
-											       		
-											       			<div id="m11" class="mark">入</div>
-											       			<div id="" class="fs">・</div>
-											       			<div id="m12" class="mark">外</div>
-											       		
-											       	</div>
-											     </div>
-											     <div id="y5x2y2y6x7" class="">
-											       		<div class="diag">
-											       			<div id="disp37" class="disp">
-											       				<input id="t37" class="inp" type="" name="" value="" list="diaglist1">
-											      			 	
-											       			</div>
-											   			</div>
-												 </div>
-											     <div id="y5x2y2y6x8" class="">
-											       	   <div class="treat">
-											       		 <div id="disp38" class="disp">
-											       			<input id="t38" class="inp" type="" name="" value="" list="treat1">
-											       			
-											      		</div>
-											      	  </div>
-											     </div> 
-											     <div id="y5x2y2y6x9" class="">
-											       	
-											       		<div id="disp39" class="disp">
-											       			<input id="t39" class="inp" type="" name="" value="" list="result1"  >
-											       			
-											      		 </div>
-											      </div>
-											</div> <!--y5x2y2y6---->	
-										
-
-         				       		    </div><!--y5x2y2----------------------->
+										<div id="treatmentHist" class="">
+											<?php
+												include_once('treatmentHist.html');
+											?>
+									    
+         				       		    </div><!--treatmentHist----------------------->
 								</div><!--y5x2----------------------->
          			</div><!--y5----------------------->
 <!--------------------------------------------------------------------------------------------------------->
@@ -655,7 +382,7 @@ if(file_exists('caseArray.dat')){
 								    			ア　発育・教育歴
 								    		</div>
 								    	</div>
-								    	<div id="phis2l" class="exp"><div id="disp40" class="disp"><textarea cols="23" rows="6" id="t40" class="inp" type="" name="" value=""></textarea></div></div>
+								    	<div id="phis2l" class="exp"><div id="disp41" class="disp"><textarea cols="23" rows="6" id="t41" class="inp" type="" name="" value=""></textarea></div></div>
 							   </div>
 							   <div id="y6x3">
 								      	<div id="y6x3y1" class="fs">
@@ -752,8 +479,8 @@ if(file_exists('caseArray.dat')){
 							障害の状態(
 							</div>
 							<div id="y7x2" class="fs1">
-								<div id="disp41" class="disp">
-									<input id="t41" class="inp" type="" name="" value="">
+								<div id="disp42" class="disp">
+									<input id="t42" class="inp" type="" name="" value="">
 								</div>
 							</div>
 							<div id="y7x3" class="fs1">
@@ -799,7 +526,7 @@ if(file_exists('caseArray.dat')){
 											               	<div id="m26" class="mark">DQ</div>
 											        </div>
 										          <div id="y8x2y2x2y2x4" class="exp">
-                                     				 <div id="disp42" class="disp"><input id="t42" class="inp" type="" name="" value=""></div>         
+                                     				 <div id="disp43" class="disp"><input id="t43" class="inp" type="" name="" value=""></div>         
                             					　</div>
                             					<div id="y8x2y2x2y2x5" class="fs">
                             						)
@@ -812,18 +539,9 @@ if(file_exists('caseArray.dat')){
 													       	　　テスト方式(
 												        </div>
 												        <div id="y8x2y2x2y3x2" class="fssm">
-                                    						  <div id="disp43" class="disp">
-                                    						  	<input id="t43" class="inp" type="tid50" name="" value="" list="tests">
-                                    						  		<datalist id="tests">
-																	<option value="WISC-IV"></option>
-																	<option value="新版K式"></option>
-																	<option value="遠城寺式発達検査"></option>
-																	<option value="グッドイナフ人物画テスト"></option>
-																	<option value="田中・ビネー式知能検査"></option>
-																	<option value="K-ABCII"></option>
-																	<option value="WAIS-III"></option>
-																	<option value=""></option>
-															 		</datalist>
+                                    						  <div id="disp44" class="disp">
+                                    						  	<input id="t44" class="inp" type="tid50" name="" value="" list="tests">
+                                    						  		
 															</div>
 												        </div>
 												        <div id="y8x2y2x2y3x3" class="fs">
@@ -870,7 +588,7 @@ if(file_exists('caseArray.dat')){
 													           	　　判定年月日(
 												        </div>
 												        <div id="y8x2y2x2y5x2" class="exp">	
-                                     						 <div id="disp44" class="disp"><input id="t44" class="inp" type="" name="date" value=""></div>
+                                     						 <div id="disp45" class="disp"><input id="t45" class="inp" type="" name="date" value=""></div>
 											         	</div>
 											         	<div id="y8x2y2x2y5x2" class="fs">
 											         		)
@@ -964,8 +682,8 @@ if(file_exists('caseArray.dat')){
                                     					</div>
                                     				</div>
                                   					<div id="y8x2y2x2y10x2">
-                                  						<div id="disp45" class="disp">
-                                  							<input id="t45" class="inp" type="" name="" value="">
+                                  						<div id="disp46" class="disp">
+                                  							<input id="t46" class="inp" type="" name="" value="">
                                   						</div>
                                   					</div>
                                   					<div id="y8x2y2x2y10x3">
@@ -983,8 +701,8 @@ if(file_exists('caseArray.dat')){
                                					 		</div>
                                					 </div>
                                					 <div id="y8x2y2x2y11x2">
-                               						    	<div id="disp46" class="disp">
-                               						    		<input id="t46" class="inp" type="" name="" value="">
+                               						    	<div id="disp47" class="disp">
+                               						    		<input id="t47" class="inp" type="" name="" value="">
                                						    	</div>
                                					 </div>
                                					 <div id="y8x2y2x2y11x3" class="fs">
@@ -997,7 +715,7 @@ if(file_exists('caseArray.dat')){
 								</div>
 					<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 								<div id="y8x2y2x3" class="exp">
-										<div id="disp47" class="disp"><textarea cols="20" rows="8" id="t47" class="inp" type="" name="" value=""></textarea></div>
+										<div id="disp48" class="disp"><textarea cols="20" rows="8" id="t48" class="inp" type="" name="" value=""></textarea></div>
 
 								</div>
 							</div>
@@ -1031,8 +749,8 @@ if(file_exists('caseArray.dat')){
                            						  </div>
                            					</div>
                          				    <div id="y8x2y3x2y1x2">
-                         						  		<div id="disp48" class="disp">
-                         						  			<input id="t48" class="inp" type="" name="" value="">
+                         						  		<div id="disp49" class="disp">
+                         						  			<input id="t49" class="inp" type="" name="" value="">
                          						  		</div>
                          					</div>
 
@@ -1044,8 +762,8 @@ if(file_exists('caseArray.dat')){
 									</div>
 							</div>	
 							<div id="y8x2y3x3" class="">
-							    		   	<div id="disp49" class="disp">
-							    		   		<textarea cols="20" rows="8" id="t49" class="inp" type="" name="" value=""></textarea>
+							    		   	<div id="disp50" class="disp">
+							    		   		<textarea cols="20" rows="8" id="t50" class="inp" type="" name="" value=""></textarea>
 							    		   	</div>
 							</div>
 						</div>
@@ -1097,8 +815,8 @@ if(file_exists('caseArray.dat')){
                       
 											<div id="y8x2y4x2y3x3" class="fs">
 
-                          					 	 	<div id="disp50" class="disp">
-                          					 	 		<input id="t50" class="inp" type="" name="" value=""	>
+                          					 	 	<div id="disp51" class="disp">
+                          					 	 		<input id="t51" class="inp" type="" name="" value=""	>
                           					 	 	</div>
 												
 											</div>
@@ -1106,7 +824,7 @@ if(file_exists('caseArray.dat')){
 									</div>
 									<div id="y8x2y4x2y4" class="">
                          				 <div id="y8x2y4x2y4x1" class="fs">　・てんかん発作のタイプ( </div>
-                         				 <div id="y8x2y4x2y4x2"><div id="disp51" class="disp"><input id="t51" class="inp" type="" name="" value=""></div></div>
+                         				 <div id="y8x2y4x2y4x2"><div id="disp52" class="disp"><input id="t52" class="inp" type="" name="" value=""></div></div>
                          				 <div id="y8x2y4x2y4x3" class="fs">)</div>
 									</div>
 									<div id="y8x2y4x2y5" class="">
@@ -1125,7 +843,7 @@ if(file_exists('caseArray.dat')){
 											<div id="m57" class="fs">・週）</div>
 										</div>
 										<div id="y8x2y4x2y5x5" class="">
-											<div id="disp52" class="disp"><input id="t52" class="inp" type="" name="" value=""></div>
+											<div id="disp53" class="disp"><input id="t53" class="inp" type="" name="" value=""></div>
 										</div>
 										
 										<div id="y8x2y4x2y5x6" class="exp">
@@ -1137,7 +855,7 @@ if(file_exists('caseArray.dat')){
 									</div>
 								</div>
 								<div id="y8x2y4x3" class="exp">
-									<div id="disp53" class="disp"><textarea cols="20" rows="8" id="t53" class="inp" type="" name="" value=""></textarea></div>
+									<div id="disp54" class="disp"><textarea cols="20" rows="8" id="t54" class="inp" type="" name="" value=""></textarea></div>
 								</div>
 						</div>
 		<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -1168,8 +886,8 @@ if(file_exists('caseArray.dat')){
                           						</div>
                           				</div>
                          				<div id="y8x2y5x2y3x4">
-                         				 		<div id="disp54" class="disp">
-                         				 			<input id="t54" class="inp" type="" name="" value="">
+                         				 		<div id="disp55" class="disp">
+                         				 			<input id="t55" class="inp" type="" name="" value="">
                          				 		</div>
                          				 </div>
                          			
@@ -1180,8 +898,8 @@ if(file_exists('caseArray.dat')){
 								 
                					</div><!--y8x2y5x2-->
 								<div id="y8x2y5x3" class="exp">
-									<div id="disp55" class="disp">
-										<textarea cols="20" rows="8" id="t55" class="inp" type="" name="" value=""></textarea>
+									<div id="disp56" class="disp">
+										<textarea cols="20" rows="8" id="t56" class="inp" type="" name="" value=""></textarea>
 									</div>
 								</div>
 						</div><!--y8x2y5-->
@@ -1233,8 +951,8 @@ if(file_exists('caseArray.dat')){
                         						</div>
                         					</div>
                        						<div id="y8x2y6x2y6x2">
-                       							<div id="disp56" class="disp">
-                       								<input id="t56" class="inp" type="" name="" value="">
+                       							<div id="disp57" class="disp">
+                       								<input id="t57" class="inp" type="" name="" value="">
                        							</div>
                        						</div>
 										    <div id="y8x2y6x2y6x3"  class="fs" >
@@ -1243,14 +961,14 @@ if(file_exists('caseArray.dat')){
 									</div>
 								</div>
 								<div id="y8x2y6x3" class="exp">
-									<div id="disp57" class="disp"><textarea cols="20" rows="8" id="t57" class="inp" type="" name="" value=""></textarea>64</div>
+									<div id="disp58" class="disp"><textarea cols="20" rows="8" id="t58" class="inp" type="" name="" value=""></textarea>64</div>
 								</div>
 							</div>
 		<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 							<div id="y8x2y7">
 								<div id="y8x2y7x1" class="fs">&nbsp⑯性　格　特　徴</div>
 								<div id="y8x2y7x2" class="exp">
-									<div id="disp58" class="disp"><input id="t58" class="inp" type="" name="" value=""></div>
+									<div id="disp59" class="disp"><input id="t59" class="inp" type="" name="" value=""></div>
 								</div>
 		<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->				
 							</div>
@@ -1355,8 +1073,8 @@ if(file_exists('caseArray.dat')){
 						<div id="p2822u" class=fs>上記の状態を具体的に記載してください。</div>
 				</div>				
 				<div id="y9x3y3">
-					<div id="disp59" class="disp">
-						<textarea cols="40" rows="3" id="t59" class="inp" type="" name="" value=""></textarea>
+					<div id="disp60" class="disp">
+						<textarea cols="40" rows="3" id="t60" class="inp" type="" name="" value=""></textarea>
 					</div>
 				</div>
 					
@@ -1386,8 +1104,8 @@ if(file_exists('caseArray.dat')){
 				</div>
 			</div>
 			<div id="y10x2" class="fs">
-				<div id="disp60" class="disp">
-					<textarea cols="40" rows="3" id="t60" class="inp" type="" name="" value="">
+				<div id="disp61" class="disp">
+					<textarea cols="40" rows="3" id="t61" class="inp" type="" name="" value="">
 						
 					</textarea>
 				</div>
@@ -1398,8 +1116,8 @@ if(file_exists('caseArray.dat')){
 			
 			<div id="y11y1" class="fs">*上記の通り診断します。</div>
 			<div id="y11y2">
-				<div id="disp61" class="disp">
-					<input id="t61" class="inp" type="" name="" value="">
+				<div id="disp62" class="disp">
+					<input id="t62" class="inp" type="" name="" value="">
 				</div>
 			</div>
 
@@ -1410,11 +1128,8 @@ if(file_exists('caseArray.dat')){
 					</div>
 				</div>
 				<div id="y11y3x2">
-					<div id="disp62" class="disp"><input id="t62" class="inp" type="" name="" value="" list="hlist">
-						<datalist id="hlist">
-							<option value="旭川荘南愛媛病院"></option>
-							<option value=""></option>
-						</datalist>
+					<div id="disp63" class="disp"><input id="t63" class="inp" type="" name="" value="" list="hlist">
+						
 					
 					</div>
 				</div>
@@ -1424,8 +1139,8 @@ if(file_exists('caseArray.dat')){
 					<div id="L" class="fs">　　　　　　　　所　在　地</div>
 				</div>
 				<div id="y11y4x2">
-					<div id="disp63" class="disp">
-							<input id="t63" class="inp" type="" name="" value="" list="adr" >
+					<div id="disp64" class="disp">
+							<input id="t64" class="inp" type="" name="" value="" list="adr" >
 							
 					</div>	
 				</div>
@@ -1435,25 +1150,17 @@ if(file_exists('caseArray.dat')){
 					<div id="L" class="fs">　　　　　　　　診療担当科名</div>
 				</div>
 				<div id="y11y5x2">
-					<div id="disp64" class="disp">
-						<input id="t64" class="inp" type="" name="" value="" list="deps">
-						 	<datalist id="deps">
-								<option value="小児科"></option>
-								<option value="小児神経科"></option>
-							</datalist>
+					<div id="disp65" class="disp">
+						<input id="t65" class="inp" type="" name="" value="" list="deps">
+						 	
 					</div>
 				</div>
 				<div id="y11y5x3">
 					<div id="y153" class="fs">医　師　氏　名</div>
 				</div>
 				<div id="y11y5x4">
-					<div id="disp65" class="disp">
-							<input id="t65" class="inp" type="" name="" value="" list="drs" >
-							<datalist id="drs">
-								<option value="森本武彦"></option>
-								<option value="堀内伊作"></option>
-								<option value="松田博美"></option>
-							</datalist>
+					<div id="disp66" class="disp">
+						<input id="t66" class="inp" type="" name="">	
 					</div>	
 				</div>
 				<div id="y11y5x5" class="fs">印</div>
