@@ -1,9 +1,9 @@
 <?php
 include('class.Calendar.php');
-
+include('class.Calendar2.php');
 $data = ['a'=>1,'b'=>4,'c'=>2,'d'=>3,'e'=>12,'f'=>11,'g'=>13,'h'=>9,'i'=>7,'j'=>3,'k'=>8];
-$calObj=new Calendar();
-
+$calendarObj=new Calendar();
+$calendar2Obj = new Calendar2();
 ?>
 
 <html>
@@ -36,16 +36,20 @@ $calObj=new Calendar();
     </div>
     
     <div id="calendar" style="width:500px;height:200px;border:2px solid white;
-    color:white;position:absolute;left:50%;top:60%">
+      color:white;position:absolute;left:50%;top:60%">
         <?php
-            $calObj->calFrame(0);
+            $calendarObj->calFrame(0);
+        ?>
+    </div>
+    <div id="calendar2" style="width:500px;height:200px;border:2px solid white;
+      color:white;position:absolute;left:50%;top:60%">
+        <?php
+            $calendar2Obj->calFrame();
         ?>
     </div>
     <div id="itemList" style="width:500px;height:180px;border:2px solid white;
     color:white;position:absolute;left:50%;top:60%">
-        <?php
-           // $obj -> makeListTable();
-        ?>
+        
     </div>
     
 </body>

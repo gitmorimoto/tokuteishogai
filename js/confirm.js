@@ -56,6 +56,28 @@ export function confirm(){
                     
                     
                     break;
+                case 18:
+                case 19:
+                case 24:
+                case 25:
+                case 30:
+                case 31:
+                case 36:
+                case 37:
+                    if(/^\d{4}-\d{2}$/.test(inpObj[index].value)){
+                        console.log('seireki match');
+                        let warekiS = westWarekiS(inpObj[index].value);
+                        warekiS=warekiS.replace('-','年');
+                        warekiS = warekiS+'月';
+                        console.log('warekiS='+ warekiS);
+                        dispObj[index].textContent = westWarekiS;
+                    }else{  
+                        dispObj[index].textContent = inpObj[index].value;
+                        dispObj[index].style.backgroundColor='red';
+
+                    }
+                    break;
+
                 default:
                     dispObj[index].textContent = inpObj[index].value;
                     break;

@@ -6,6 +6,7 @@ export function clear(){
         clearBtn.style.backgroundColor = "orange";
         inpObj.forEach((inp,index)=>{
         inp.value = "";
+        
     })
     })
     

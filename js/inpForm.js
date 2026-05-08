@@ -1,4 +1,6 @@
 import {initCalendar} from './calendar.js';
+import {initCalendar2} from './calendar2.js';
+import {clear2} from './calendar2.js';
 import {getAddress} from './zipCode.js';
 import {makeList} from './selList.js';
 import {getRefData} from './refData.js';
@@ -140,11 +142,12 @@ for(let i=0;i<69;i++)
 }
 container1.appendChild(fragment);
 //--------------------------------------------------------------------
+//selectFrame(num) display the frame of with num
 function selectFrame(num){
     let frameObj = [];
     frameObj = document.querySelectorAll('.frame');
-    console.log(frameObj);
-    console.log(typeof frameObj);
+   // console.log(frameObj);
+   // console.log(typeof frameObj);
     for(let i=0;i<69;i++){
         if(i==num){
             frameObj[i].style.display='block';
@@ -154,27 +157,28 @@ function selectFrame(num){
         }   
     }
 }
+//function init has callback onSelect as argment
 function init(onSelect){
     //let calendarObj = document.getElementById('calendar');
     //calendarObj.style.display = "none";
-    for(let i=0;i<69;i++){
-        cellObj[i].addEventListener('click',function(){
+    for(let n=0;n<69;n++){
+        cellObj[n].addEventListener('click',function(){
             
-            if(cellObj[i].style.backgroundColor==="orange"){
+            if(cellObj[n].style.backgroundColor==="orange"){
                 console.log('transparent');
-                cellObj[i].style.backgroundColor="transparent";
+                cellObj[n].style.backgroundColor="transparent";
             }else{
                 console.log('orange');
-                cellObj[i].style.backgroundColor="orange";
+                cellObj[n].style.backgroundColor="orange";
             }
             
-            let dateBoxNum=i;
+            let dateBoxNum=n;
             //instObj = document.getElementById('instruction');
-            console.log('itemList'+i+'='+itemList[i]);
-            instObj.textContent = itemList[i]+'を入力してください。';
+            console.log('itemList'+n+'='+itemList[n]);
+            instObj.textContent = itemList[n]+'を入力してください。';
             instObj.style.color = 'white';
             instObj.style.fontSize = '30px';
-            onSelect(i);
+            onSelect(n);
         });
     }
 }
@@ -197,11 +201,13 @@ function searchAddress(){
 
 
 init(function(num){
-    console.log('num='+num);
+   // console.log('num='+num);
     let calendarObj = document.getElementById('calendar');
+    let calendar2Obj = document.getElementById('calendar2');
     let itemListObj = document.getElementById('itemList');
     
     selectFrame(num);
+    console.log('num='+num);
     switch(num)
     {
         case 3:
@@ -209,19 +215,12 @@ init(function(num){
         case 8:
         case 9:
         case 12:
-        case 18:
-        case 19:
-        case 24:
-        case 25:
-        case 30:
-        case 31:
-        case 36:
-        case 39:
         case 45:
         case 62:
 
             itemListObj.style.display = "none";
             calendarObj.style.display = "block";
+            calendar2Obj.style.display = "none";
             initCalendar(function(date){
                 console.log('received data is'+date);
                 
@@ -231,6 +230,31 @@ init(function(num){
                 inpObj[num].value = date;
                 
             })
+            break;
+        case 18:
+        case 19:
+        case 24:
+        case 25:
+        case 30:
+        case 31:
+        case 36:
+        case 37:
+            itemListObj.style.display = "none";
+            calendarObj.style.display = "none";
+           
+            calendar2Obj.style.display = "block";
+            initCalendar2(function(data){
+                console.log('received data is'+data);
+                console.log('num='+num);
+                inpObj[num] = document.getElementById('inp' + num);
+                inpObj[num].style.fontSize = '61px';
+                
+                inpObj[num].value = data;
+
+                clear2();
+            });
+            
+            
             break;
         case 4:
             calendarObj.style.display = "none";
@@ -295,4 +319,5 @@ init(function(num){
 //-------------------------------------------------------------------
 forward();
 backward();
+
 })
