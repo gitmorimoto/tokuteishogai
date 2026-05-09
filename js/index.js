@@ -8,6 +8,7 @@ import {storeData} from './storeData.js';
 import {recover} from './recoverData.js';
 import {clear} from './clearData.js';
 import {markCheck} from './mark.js';
+import {searchAll} from './search.js';
 document.addEventListener('DOMContentLoaded',function(){
     let output='frame3';//selected date is set in output element.
     
@@ -39,5 +40,6 @@ document.addEventListener('DOMContentLoaded',function(){
     clear();
     recover();
     markCheck();
+    searchAll();
 
 })
