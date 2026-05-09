@@ -9,7 +9,7 @@ export function initCalendar2(onSelectS)
     const nengoArrayS=['w','s','h','r',];
     
     
-    const nengoSObj = document.querySelectorAll('.nengoS');
+    
     const warekiS=document.querySelectorAll('.warekiS');
     const seirekiS=document.querySelectorAll('.seirekiS');
     
@@ -22,24 +22,24 @@ export function initCalendar2(onSelectS)
     warekiSObj.hidden=false;
     seirekiSObj.hidden=true;
     //console.log(nengoSObj);
+    const nengoArray = ['wS', 'sS', 'hS', 'rS'];
     
-    for(let i=0;i<4;i++)
-    {
-       
-       // console.log(nengoSObj[0].getBoundingClientRect());
-        console.count('registered');
-        nengoSObj[i].addEventListener('click',function(){
-           
+    nengoArray.forEach((era,index) =>{
+       // console.log('event added', era);
+      
+        let nengoSObj=document.getElementById(era);
+        
+        nengoSObj.onclick = function() {   
            console.count('clicked');
-            
-            if(nengoSObj[i].style.background==="orange")
+           
+            if(nengoSObj.style.background==="orange")
             {
-                nengoSObj[i].style.background="transparent";
+                nengoSObj.style.background="transparent";
             }else{
-                 nengoSObj[i].style.background="orange";
+                 nengoSObj.style.background="orange";
             }
            
-            let nengoS=nengoSObj[i].textContent;
+            let nengoS=nengoSObj.textContent;
             console.log(nengoS)
        
             switch (nengoS) 
@@ -59,6 +59,7 @@ export function initCalendar2(onSelectS)
                      warekiSObj.hidden=false;
                      seirekiSObj.hidden=true;
                      nBS=1988;
+                      
                  break;
                 case "令和":
                      warekiSObj.hidden=false;
@@ -67,8 +68,8 @@ export function initCalendar2(onSelectS)
                  break;
             }
                  console.log('nBS='+nBS);
-        })
-    }      
+        }
+    });      
         
         
         
@@ -79,12 +80,13 @@ export function initCalendar2(onSelectS)
         {
          	sYSObj[i]=document.getElementById('sYS'+i);
             if(!sYSObj[i]) continue;
-            sYSObj[i].addEventListener('click',function(){
+           
+            sYSObj[i].onclick= function() {
                 sYSObj[i].style.background="orange";
                 let sYS=sYSObj[i].innerText;
                 yS=Number(sYS)+nBS;
                 console.log('yS='+yS);
-            })
+            }
            
         } 
         
@@ -92,13 +94,14 @@ export function initCalendar2(onSelectS)
         {
             wYSObj[i]=document.getElementById('wYS'+i);
             //console.log('wYObj['+i+']='+wYObj[i]);
-            wYSObj[i].addEventListener('click',function(){
+          
+             wYSObj[i].onclick= function(){
                 wYSObj[i].style.background="orange";
                 let wYS=wYSObj[i].innerText;
                 //console.log(wY);
                 yS=Number(wYS)+nBS;
                 //console.log('y='+y);
-            })
+            }
         }
       
 
@@ -107,14 +110,16 @@ export function initCalendar2(onSelectS)
          //  console.log('i='+i);
            mSObj[i]=document.getElementById('mS'+String(i));
            //console.log('mObj['+i+']='+mObj[i]);
-           mSObj[i].addEventListener('click',function(){
+           
+            mSObj[i].onclick= function() {
                 mSObj[i].style.background="orange";
                 mS=mSObj[i].textContent;
+                mS=String(mS).padStart(2,'0');
                 console.log('yS='+yS+'mS='+mS);
                 let yM = yS+'-'+mS;
                
                  onSelectS(yM);
-           })
+           }
            
 
             

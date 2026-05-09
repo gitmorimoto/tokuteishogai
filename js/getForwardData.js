@@ -13,9 +13,11 @@ export function getForwardData(){
         console.log(data);
         console.log(typeof data);
         const inpObj = document.querySelectorAll('.inp');
-        inpObj.forEach((inp,index)=>{
-            inp.value = data[index];
-        })
+        if(data.length !== 0){
+            inpObj.forEach((inp,index)=>{
+                inp.value = data[index];
+            })
+        }
     })
     .catch(()=>{
             console.log('error');

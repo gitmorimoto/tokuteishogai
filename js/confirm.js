@@ -20,14 +20,32 @@ export function confirm(){
             console.log(wareki); 
             return wareki;
         }
+        function westWarekiS(seireki){
+            
+            const [y, m] = seireki.split('-').map(Number);
+           
+
+            const dateS = new Date(y, m - 1);
+
+
+            const warekiS = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', {
+                era: 'long',
+                year: 'numeric',
+                month: 'long',
+               
+            }).format(dateS);
+
+            console.log(warekiS); 
+            return warekiS;
+        }
 
         let inpObj = document.querySelectorAll('.inp');
         let dispObj = document.querySelectorAll('.disp');
         let dataArray = [];
         if(dispObj.forEach(function(disp,index){
             console.log('index='+index);
-            console.log('dispObj['+index+']='+dispObj[index]);
-            console.log(inpObj[index].value);
+            //console.log('dispObj['+index+']='+dispObj[index]);
+            //console.log(inpObj[index].value);
             
             dataArray.push(inpObj[index].value);
             
@@ -50,7 +68,7 @@ export function confirm(){
                         dispObj[index].textContent = wareki;
                     }else{  
                         dispObj[index].textContent = inpObj[index].value;
-                        dispObj[index].style.backgroundColor='red';
+                       // dispObj[index].style.backgroundColor='red';
 
                     }
                     
@@ -64,16 +82,21 @@ export function confirm(){
                 case 31:
                 case 36:
                 case 37:
-                    if(/^\d{4}-\d{2}$/.test(inpObj[index].value)){
+                    console.log(inpObj[index].value);
+                    let seirekiS = inpObj[index].value;
+                    if(/^\d{4}-(0[1-9]|1[0-2])$/.test(inpObj[index].value)){
                         console.log('seireki match');
                         let warekiS = westWarekiS(inpObj[index].value);
-                        warekiS=warekiS.replace('-','年');
-                        warekiS = warekiS+'月';
-                        console.log('warekiS='+ warekiS);
-                        dispObj[index].textContent = westWarekiS;
+                        if(typeof warekiS === 'string'){
+                            warekiS=warekiS.replace('-','年');
+                            warekiS = warekiS+'月';
+                            console.log('warekiS='+ warekiS);
+                            dispObj[index].textContent = warekiS;
+                            dispObj[index].style.fontSize ='7px';
+                        }
                     }else{  
                         dispObj[index].textContent = inpObj[index].value;
-                        dispObj[index].style.backgroundColor='red';
+                       // dispObj[index].style.backgroundColor='red';
 
                     }
                     break;

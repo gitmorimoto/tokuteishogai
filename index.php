@@ -170,7 +170,7 @@ if(file_exists('caseArray.dat')){
 								</div>
 								<div id="y2x4" class="exp">
 									<div id="dia1">
-										<div id="l7" class="fs1">
+										<div id="l7" class="fs1" style="font-size:9px">
 											④　障害の原因と<br>　　なった傷病名
 										</div>
 								    </div>
@@ -406,7 +406,7 @@ if(file_exists('caseArray.dat')){
 									     </div>
 
 									     <div id="y6x3y4" class="">
-										        <div id="y6x3y4x1" class="fssm">
+										        <div id="" class="" style="font-size:9px">
 									   	        	      　　小学校（
 									         	</div>
 										        <div id="y6x3y4x2" class="">
@@ -427,7 +427,7 @@ if(file_exists('caseArray.dat')){
 									  	 </div>
 
 									     <div id="y6x3y5" class="">
-										       <div id="y6x3y5x1" class="fssm">
+										       <div id="y6x3y5x1" class="fssm" style="font-size:9px">
 												        　　中学校（
 										       </div>
 										       <div id="y6x3y5x2" class="">
@@ -448,7 +448,7 @@ if(file_exists('caseArray.dat')){
 									     </div>
 
 									     <div id="y6x3y6" class="">
-											   <div id="y6x3y6x1" class="fssm">
+											   <div id="y6x3y6x1" class="fssm" style="font-size:9px" >
 											       		　　高校（
 										  	  </div>
 											  <div id="y6x3y6x2" class="">
