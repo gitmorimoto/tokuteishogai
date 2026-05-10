@@ -359,7 +359,7 @@ if(file_exists('caseArray.dat')){
 										    </div>
 										</div>	<!--y5x2y1----------------------->
 
-										<div id="treatmentHist" class="" style="border:2px solid yellow">
+										<div id="treatmentHist" class="" style="border:">
 											
 									    
          				       		    </div><!--treatmentHist----------------------->

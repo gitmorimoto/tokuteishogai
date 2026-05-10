@@ -1,12 +1,21 @@
 <?php
 include_once('config.php');
 $ts = time();
-$pathToDatabaseFile = $pathToDatabase.'/'.$ts.'.json';
 
+if (!is_dir($pathToDatabase)) {
+    mkdir($pathToDatabase, 0777, true);
+}
+$pathToDatabaseFile = $pathToDatabase.'/'.$ts.'.json';
 if(file_exists('temp/store.json')){
-   
-    copy('temp/store.json',$pathToDatabaseFile);
-    $return = ['stored'];
+    if (copy('temp/store.json', $pathToDatabaseFile)) {
+
+        $return = ['stored'];
+
+    } else {
+
+        $return = ['copy failed'];
+
+    }
 }else{
     $return = ['no data in the temp/store.json'];
 }

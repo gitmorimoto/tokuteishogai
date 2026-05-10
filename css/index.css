@@ -12,7 +12,7 @@ body,html{height:100%;width:100%;}
 .page{width:210mm;height:298mm;border:1px solid white ; background:gray;color:white;border:}
 
 #mid{width:100%;height:700mm;border:1px solid white ; background:gray;color:white;display:flex}
-#main{width:175mm;height:256mm;margin-top:;margin-left: 12mm;background:black;border:;color:white;border:1px solid white;}
+#main{width:175mm;height:258mm;margin-top:;margin-left: 12mm;background:black;border:;color:white;border:1px solid white;}
 #main2{width:175mm;height:76mm;margin-top:;margin-left: 12mm;background:black;border:;color:white;border:1px solid white;}
 #bl1{width:175mm;height:20mm;margin-top:;margin-left: 12mm;background:;border:;color:white;border:;}
 #y0{width:100%;height:6mm}
@@ -20,7 +20,7 @@ body,html{height:100%;width:100%;}
 #y2{width:100%;height:7mm;display:flex;}
 #y3{width:100%;height:23mm;display:flex;}
 #y4{width:100%;height:7mm;display:flex;}
-#y5{width:100%;height:34mm;display:flex;border: }
+#y5{width:100%;height:36mm;display:flex;border: }
 #y6{width:100%;height:26mm;display:flex;border:}
 #y7{width:100%;height:4mm;display:flex;border:;border-bottom: 1px solid white }
 #y8{width:100%;height:140mm;display:flex;border: }
@@ -90,8 +90,8 @@ body,html{height:100%;width:100%;}
 #y5x1y2{width:50mm;height:3mm;border-bottom: }
 #y5x1y3{width:50mm;height:20mm;border:}
 
-#y5x2y1{width:100%;height:8mm;display: flex}
-/*#y5x2y2{width:100%;height:26mm;border-left:1px solid white }*/
+#y5x2y1{width:100%;height:8mm;display: flex;font-size:7px}
+#y5x2y2{width:100%;height:4mm;font-size:7px;}
 #treatmentHist{width:103mm;height:26mm;border: }
 #y5x2y1x1{width:30%;height:100%;display: flex}
 #y5x2y1x2{width:20%;height:100%;display: flex}
@@ -573,38 +573,6 @@ body,html{height:100%;width:100%;}
 
 .inp{width:95%;height:100%;font-size:9px;}
 #treatmentHist{width:106mm;height:26mm}
-#trHistory{
-    width:106mm;
-}
-
-.title{
-    font-size:9px;
-    margin-bottom:4px;
-}
-
-.historyTable{
-    width:106mm;
-    border-collapse:collapse;
-    table-layout:fixed;
-    border-color:red;
-}
-
-.historyTable th,
-.historyTable td{
-    border:1px solid red;
-    font-size:7px;
-    text-align:center;
-    height:15px;
-    padding:2px;
-}
-
-.inp{
-    width:100%;
-    height:100%;
-    border:none;
-    box-sizing:border-box;
-    font-size:9px;
-}
 
 
 }
