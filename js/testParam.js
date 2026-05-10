@@ -13,7 +13,10 @@ export function display()
 {
     let inpObj = document.querySelectorAll('.inp');
     for(let i=0;i<66;i++){
-         inpObj[i].style.display = 'block';
+        if(inpObj[i]){
+            inpObj[i].style.display = 'block';
+        }
+         
     }
    
     inpObj[24].style.display = 'block';  

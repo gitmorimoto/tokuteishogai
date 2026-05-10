@@ -215,6 +215,7 @@ init(function(num){
         case 8:
         case 9:
         case 12:
+        case 42:
         case 45:
         case 62:
 

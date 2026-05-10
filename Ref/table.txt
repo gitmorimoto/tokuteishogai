@@ -1,0 +1,219 @@
+挿入した部分だけ印刷時にずれる原因は、主に次のようなものが多いです。
+
+1. height:% が親要素基準になっている
+
+あなたのコードには：
+
+style="height:14%;"
+
+のような % 指定が大量にあります。
+
+しかし印刷時は、
+
+height:100%
+
+の基準となる親要素の高さが不定になることが多く、ブラウザが再計算してレイアウトが崩れます。
+
+特に：
+
+height:16%;
+height:14%;
+height:100%;
+
+は印刷でずれやすいです。
+
+2. display:flex の印刷互換性
+
+Chrome系では、
+
+display:flex
+align-items:center
+justify-content:center
+
+が画面表示と印刷で微妙に異なることがあります。
+
+特に：
+
+高さ
+vertical-align
+line-height
+
+が変わり、
+
+文字が上に寄る
+inputだけ下がる
+行全体がずれる
+
+ことがあります。
+
+3. <input> の印刷特有のズレ
+
+inputはブラウザ依存が大きいです。
+
+あなたは：
+
+<input style="
+height:100%;
+display:flex;
+align-items:center;
+">
+
+としていますが、
+
+input に display:flex はかなり不安定です。
+
+印刷時に：
+
+内部padding
+line-height
+baseline
+
+が変わります。
+
+これが最も怪しい原因の1つです。
+
+4. ブラウザの印刷縮小
+
+印刷時：
+
+拡大縮小 94%
+
+など自動縮小されると、
+
+7px
+9px
+
+のような極小文字が丸め誤差を起こします。
+
+結果：
+
+行高さズレ
+枠ズレ
+
+になります。
+
+5. 外部から挿入したHTMLのCSS継承
+
+挿入先HTML側に：
+
+*{
+ box-sizing:border-box;
+}
+
+などがあると、
+元HTMLと計算結果が変わります。
+
+特に：
+
+font-size
+line-height
+box-sizing
+
+の継承で崩れます。
+
+改善方法（かなり重要）
+① %高さ をやめる
+
+例えば：
+
+height:14%;
+
+ではなく：
+
+height:24px;
+
+のように固定pxへ。
+
+印刷ではこちらが圧倒的に安定します。
+
+② inputにflexを使わない
+
+今：
+
+input{
+ display:flex;
+ align-items:center;
+}
+
+ですが、
+
+印刷では：
+
+input{
+ display:block;
+ padding:0;
+ margin:0;
+ line-height:1;
+ box-sizing:border-box;
+}
+
+が安全です。
+
+③ 印刷専用CSSを作る
+@media print{
+
+    .inp{
+        height:20px;
+        line-height:20px;
+        padding:0;
+        margin:0;
+    }
+
+    #trHistory{
+        height:auto;
+    }
+
+}
+④ table化する（最重要）
+
+現在は：
+
+div + flex
+
+で表を再現しています。
+
+しかし印刷では：
+
+<table>
+<tr>
+<td>
+
+が圧倒的に安定します。
+
+特に医療書類・帳票はtable推奨です。
+
+特に怪しい箇所
+
+これ：
+
+<input
+style="
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+
+input に display:flex はやめた方がよいです。
+
+かなり印刷崩れの原因になります。
+
+まず試すべき修正
+.inp{
+    width:100%;
+    height:100%;
+    font-size:9px;
+    background:darkgreen;
+    color:white;
+
+    display:block;
+
+    padding:0;
+    margin:0;
+    border:none;
+
+    box-sizing:border-box;
+}
+
+これだけでも改善する可能性があります。

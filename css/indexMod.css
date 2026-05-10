@@ -1,0 +1,132 @@
+@media screen{
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+/* 共通 */
+
+*{
+    box-sizing:border-box;
+}
+
+.page{
+    width:210mm;
+    height:298mm;
+
+    background:gray;
+    color:white;
+}
+
+/* 入力 */
+
+.inp{
+    width:100%;
+    height:14px;
+
+    border:none;
+
+    background:darkgreen;
+    color:white;
+
+    font-size:8px;
+
+    margin:0;
+    padding:0 2px;
+
+    line-height:14px;
+
+    box-sizing:border-box;
+}
+
+/* mark */
+
+.mark{
+    font-size:9px;
+}
+
+/* treatment history */
+
+#treatmentHist{
+    width:106mm;
+    height:26mm;
+}
+
+#trHistory{
+    width:106mm;
+}
+
+.title{
+    font-size:9px;
+    margin-bottom:2px;
+}
+
+.historyTable{
+    width:100%;
+
+    border-collapse:collapse;
+    border-spacing:0;
+
+    table-layout:fixed;
+}
+
+.historyTable th,
+.historyTable td{
+
+    border:1px solid red;
+
+    font-size:7px;
+
+    text-align:center;
+    vertical-align:middle;
+
+    height:15px;
+
+    padding:0;
+}
+
+/* 修正 */
+
+#disp61{
+    width:50%;
+    height:100%;
+
+    margin-left:10mm;
+}
+
+#disp66{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    color:white;
+}
+
+#t66{
+    width:95%;
+    height:95%;
+}
+
+/* text */
+
+.textA{
+    font-size:9px;
+    color:white;
+
+    height:28mm;
+}
+
+/* vertical */
+
+.gensyou{
+    writing-mode:vertical-rl;
+
+    font-size:11px;
+
+    margin-left:2mm;
+}
+
+}

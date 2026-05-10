@@ -97,7 +97,8 @@ if(file_exists('caseArray.dat')){
      
 	
 	<div id="mid">
-		    <div id="refList" style="width:20%;height:100%;overflow-y: scroll;border:2px solid red" >
+		    <div id="refList" style="width:20%;height:100%;overflow-y: scroll;
+			background:black" >
 		    	
 		    </div>
 			<div class="wrap" id="wrap1" style="width:80%">
@@ -333,7 +334,7 @@ if(file_exists('caseArray.dat')){
 								    			</div>
 								    	</div>
 								</div> <!--y5x1----------------------->
-								<div id="y5x2" class="yxe">
+								<div id="y5x2" class="yxe" style="border:">
 										<div id="y5x2y1" class="y">
 					
 										    <div id="y5x2y1x1" class="fs1">
@@ -358,10 +359,8 @@ if(file_exists('caseArray.dat')){
 										    </div>
 										</div>	<!--y5x2y1----------------------->
 
-										<div id="treatmentHist" class="">
-											<?php
-												include_once('treatmentHist.html');
-											?>
+										<div id="treatmentHist" class="" style="border:2px solid yellow">
+											
 									    
          				       		    </div><!--treatmentHist----------------------->
 								</div><!--y5x2----------------------->
@@ -432,7 +431,7 @@ if(file_exists('caseArray.dat')){
 										       </div>
 										       <div id="y6x3y5x2" class="">
 										           	<div id="m18" class="mark">
-												        普通学級&nbsp・　
+														普通学級&nbsp・　
 											         </div>
 									       	   </div>
 										       <div id="y6x3y5x3" class="">

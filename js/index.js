@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded',function(){
         markObj[i].style.border='2px solid transparent';
     }
 
+    fetch('treatmentHist.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('treatmentHist').innerHTML = data;
+    });
+
     backward();
    // hide();
     display();

@@ -100,6 +100,25 @@ export function confirm(){
 
                     }
                     break;
+                case 17:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 26:
+                case 27:
+                case 28:
+                case 29:
+                case 32:
+                case 33:
+                case 34:
+                case 35:
+                case 38:
+                case 39:
+                case 40:
+               
+                    console.log('font small');
+                    dispObj[index].style.fontSize ='7px';
 
                 default:
                     dispObj[index].textContent = inpObj[index].value;

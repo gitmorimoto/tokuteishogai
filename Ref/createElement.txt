@@ -1,0 +1,119 @@
+document.createElement() は JavaScript で新しい HTML 要素を作る関数です。
+
+基本形：
+
+const element = document.createElement('タグ名');
+1. 基本例
+<div id="area"></div>
+
+<script>
+const p = document.createElement('p');
+
+p.textContent = 'Hello';
+
+document.getElementById('area').appendChild(p);
+</script>
+
+結果：
+
+<div id="area">
+  <p>Hello</p>
+</div>
+2. ボタンを作る
+const btn = document.createElement('button');
+
+btn.textContent = 'Click';
+
+document.body.appendChild(btn);
+3. 属性を追加
+const input = document.createElement('input');
+
+input.type = 'text';
+input.placeholder = 'name';
+
+document.body.appendChild(input);
+4. class を追加
+const div = document.createElement('div');
+
+div.className = 'box';
+
+または：
+
+div.classList.add('box');
+5. style を設定
+const p = document.createElement('p');
+
+p.textContent = 'sample';
+
+p.style.color = 'red';
+p.style.fontSize = '20px';
+
+document.body.appendChild(p);
+6. 複数要素を追加
+const ul = document.createElement('ul');
+
+for(let i=0;i<3;i++){
+
+    const li = document.createElement('li');
+
+    li.textContent = 'item ' + i;
+
+    ul.appendChild(li);
+}
+
+document.body.appendChild(ul);
+7. click event を追加
+const btn = document.createElement('button');
+
+btn.textContent = 'push';
+
+btn.addEventListener('click', function(){
+
+    alert('clicked');
+
+});
+
+document.body.appendChild(btn);
+8. あなたがよく使う形（span作成）
+
+以前のコードに近い例：
+
+const spanObj = document.createElement('span');
+
+spanObj.textContent = '診断名';
+
+document.body.appendChild(spanObj);
+よく一緒に使うもの
+関数	意味
+createElement()	要素作成
+appendChild()	追加
+textContent	文字設定
+classList.add()	class追加
+setAttribute()	属性追加
+addEventListener()	イベント追加
+よくある間違い
+❌ appendChildしない
+const p = document.createElement('p');
+
+だけでは画面に出ません。
+
+必ず：
+
+document.body.appendChild(p);
+
+などで追加します。
+
+createElement と innerHTML の違い
+createElement
+
+安全・細かく操作できる
+
+const p = document.createElement('p');
+p.textContent = 'abc';
+innerHTML
+
+簡単だが危険な場合あり
+
+div.innerHTML = '<p>abc</p>';
+
+ユーザー入力をそのまま入れると危険です。

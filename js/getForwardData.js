@@ -15,7 +15,10 @@ export function getForwardData(){
         const inpObj = document.querySelectorAll('.inp');
         if(data.length !== 0){
             inpObj.forEach((inp,index)=>{
-                inp.value = data[index];
+                if(data[index]){
+                    inp.value = data[index];
+                }
+                
             })
         }
     })

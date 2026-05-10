@@ -93,7 +93,7 @@ body,html{height:100%;width:100%;}
 
 #y5x2y1{width:100%;height:8mm;display: flex}
 /*#y5x2y2{width:100%;height:26mm;border-left:1px solid white }*/
-#treatmentHist{width:100%;height:26mm;border: }
+#treatmentHist{width:100%;height:26mm;border:2px solid red }
 #y5x2y1x1{width:30%;height:100%;display: flex}
 #y5x2y1x2{width:20%;height:100%;display: flex}
 #y5x2y1x3{width:20%;height:100%;display: flex}
@@ -1187,4 +1187,39 @@ body,html{height:100%;width:100%;}
 
 .fssm{font-size: 10px;transform:scale(0.9);}
 .textA{font-size:9px;color:black;border: }
+
+
+#trHistory{
+    width:100%;
+}
+
+.title{
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+.historyTable{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+}
+
+.historyTable th,
+.historyTable td{
+    border:1px solid black;
+    font-size:9px;
+    text-align:center;
+    height:24px;
+    padding:2px;
+}
+
+.inp{
+    width:100%;
+    height:100%;
+    border:none;
+    box-sizing:border-box;
+    font-size:9px;
+}
+
+}
 }
