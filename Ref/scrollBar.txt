@@ -1,0 +1,15 @@
+/* スクロールは可能にする */
+.container {
+  overflow: auto;
+
+  /* IE, Edge（旧） */
+  -ms-overflow-style: none;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari */
+.container::-webkit-scrollbar {
+  display: none;
+}

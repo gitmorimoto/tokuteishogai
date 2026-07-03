@@ -72,7 +72,7 @@ file_put_contents('repository/itemArray.json',json_encode($data,JSON_UNESCAPED_U
     <div id="" style="width:100px;height:200px;
     border:1px solid white;">
     <?php
-    /* The lis is made */
+    /* The list is made */
       //  $obj -> makeListTable();
     ?>
     </div>

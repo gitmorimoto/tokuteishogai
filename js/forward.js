@@ -58,6 +58,9 @@ export function forward(){
         })
         .then(data=>{
             console.log('Response from server:',data);
+            console.log(location.href);
+            location.href = 'index.php';
+             console.log(location.href);
         })
         .catch(error => {
             console.error('Error:',error);

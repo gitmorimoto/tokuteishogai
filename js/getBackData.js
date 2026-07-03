@@ -9,16 +9,34 @@ export function backward(){
         }
     })
     .then(data=>{
-       // console.log(data);
+        console.log(data);
        // console.log(typeof data);
+       function deleteBackData(){
+            console.log('deleteBackData function called');
+            fetch('deleteBackData.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Delete backward.json:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
         const inpObj = document.querySelectorAll('.inp');
         inpObj.forEach((inp,index)=>{
             if(data[index])
             {
-                 inp.value = data[index];
+                inp.value = data[index];
             }
-           
+            
         })
+        deleteBackData();
     })
     .catch(()=>{
             console.log('error');
