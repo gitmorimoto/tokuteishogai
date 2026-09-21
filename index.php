@@ -63,7 +63,7 @@ if(file_exists('caseArray.dat')){
 				
 				<label for="caseid">ID</label>
 				<div id="disp0" class="disp">
-						<input type="text" id="t0" class="inp" style="background: darkgreen;color:white" value="23337">
+						<input type="text" id="t0" class="inp" style="background: darkgreen;color:white;font-size:21px">
 					    <button id="search" class="b5" type="">検索</button>			
 				</div>
 			  			
@@ -135,9 +135,11 @@ if(file_exists('caseArray.dat')){
 									</div>
 								</div>
 								<div id="y1x3" class="fs1">
-									<div id="m1" class="mark">男</div>
+									<div id="m1" class="mark" 
+									 style="width:20px;height:20px;box-sizing:border-box;border-radius:50%;border:2px solid white;">男</div>
 									<div id="dot1">・</div>
-									<div id="m2" class="mark">女</div>
+									<div id="m2" class="mark"
+									style="width:20px;height:20px;border-radius:10px;border:2px solid white">女</div>
 								</div>
 								<div id="y1x4" class="exp">
 									<div id="l5" class="fs1">②　生年月日</div>
@@ -145,7 +147,7 @@ if(file_exists('caseArray.dat')){
 								
                 				<div id="y1x5" class="exp">
                 					<div id="disp3" class="disp">
-                						<input id=t3 class="inp" type="" name="" value="<?php if(!empty($scase['birthday'])){echo $scase['birthday'];} ?>">
+                						<input id="t3" class="inp" type="" name="">>
                 					</div>
                 				</div>
 							</div>
@@ -359,9 +361,10 @@ if(file_exists('caseArray.dat')){
 										    </div>
 										</div>	<!--y5x2y1----------------------->
 
-										<div id="treatmentHist" class="" style="border:">
-											
-									    
+										<div id="treatmentHist" class="" style="">
+											<?php  	
+												include('treatmentHist.html');
+									    	?>
          				       		    </div><!--treatmentHist----------------------->
 								</div><!--y5x2----------------------->
          			</div><!--y5----------------------->
@@ -1072,7 +1075,7 @@ if(file_exists('caseArray.dat')){
 						<div id="p2822u" class=fs>上記の状態を具体的に記載してください。</div>
 				</div>				
 				<div id="y9x3y3">
-					<div id="disp60" class="disp">
+					<div id="disp60" class="disp" style="font-size:6px;">
 						<textarea cols="40" rows="3" id="t60" class="inp" type="" name="" value=""></textarea>
 					</div>
 				</div>

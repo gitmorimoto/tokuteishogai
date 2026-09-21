@@ -12,9 +12,9 @@ body,html{height:100%;width:100%;}
 .mark{font-size:9px}
 .page{width:210mm;height:298mm; background:white;color:black;}
 
-#mid{width:100%;height:700mm;border: ; background:gray;color:black;display:flex}
+#mid{width:100%;height:700mm; background:gray;color:black;display:flex}
 #main{width:175mm;height:258mm;margin-top:;margin-left: 12mm;background:white;border:;color:black;border:1px solid black;}
-#main2{width:175mm;height:76mm;margin-top:;margin-left: 12mm;background:white;border:;color:black;border:1px solid black;}
+#main2{width:175mm;height:76mm;margin-top:;margin-left: 12mm;background:white;border:;color:black;border:1px solid black}
 #bl1{width:175mm;height:20mm;margin-top:;margin-left: 12mm;background:;border:;color:black;border:;}
 #y0{width:100%;height:6mm}
 #y1{width:100%;height:7mm;display:flex;}
@@ -27,8 +27,9 @@ body,html{height:100%;width:100%;}
 #y8{width:100%;height:140mm;display:flex;border: }
 #y9{width:100%;height:50mm;display:flex;border-bottom: 1px solid black }
 #y10{width:100%;height:7mm;display:flex;border-bottom: 1px solid black; }
-#y11{width:100%;height:17mm;display:;border-bottom: 1px solid black }
-
+#y11{width:100%;height:17mm;
+    border-left:1px solid black;border-right:1px solid black;border-top:;
+}
 #y1x1{width:32mm;height:100%;border-right: 1px solid black}
 #y1x2{width:52mm;height:100%;border-right: 1px solid black}
 #y1x3{width:14mm;height:100%;border-right: 1px solid black;display: flex}
@@ -385,8 +386,8 @@ body,html{height:100%;width:100%;}
 #y9x3{width:139mm;height:100%;border-right: }
 
 #y9x3y1{width:100%;height:34mm;border-bottom: 1px solid black;display: }
-#y9x3y2{width:100%;height:5mm;border-bottom: ;display: flex }
-#y9x3y3{width:100%;height:5.5mm;border-bottom:1px solid black ;display: flex; }
+#y9x3y2{width:100%;height:3mm;border-bottom: ;display: flex ;font-size:6px}
+#y9x3y3{width:100%;height:7.5mm;border-bottom:1px solid black ;display: flex;font-size:6px }
 #y9x3y4{width:100%;height:4.5mm;border-bottom: ;display: flex; }
 
 #y9x2y1{width:100%;height:45mm;border-bottom: 1px solid black;  }
@@ -448,37 +449,37 @@ body,html{height:100%;width:100%;}
 #y9x3y1y7x5{width:20mm;height:100%;border-bottom: ;display: flex }
 #y9x3y1y7x6{width:3mm;height:100%;border-bottom:;display: flex }
 
-#y9x3y1y8{width:100%;height:8mm;border-bottom: ;display: flex; }
-#y9x3y1y8x1{width:38mm;height:100%;border-bottom: ;display: flex }
-#y9x3y1y8x2{width:3mm;height:100%;border-bottom:;display: flex }
-#y9x3y1y8x3{width:25mm;height:100%;border-bottom: ;display: flex }
-#y9x3y1y8x4{width:35mm;height:100%;border-bottom: ;display: flex }
-#y9x3y1y8x5{width:20mm;height:100%;border-bottom: ;display: flex }
-#y9x3y1y8x6{width:3mm;height:100%;border-bottom: ;display: flex }
+#y9x3y1y8{width:100%;height:8mm;display: flex; }
+#y9x3y1y8x1{width:38mm;height:100% ;display: flex }
+#y9x3y1y8x2{width:3mm;height:100%;display: flex }
+#y9x3y1y8x3{width:25mm;height:100% ;display: flex }
+#y9x3y1y8x4{width:35mm;height:100%;display: flex }
+#y9x3y1y8x5{width:20mm;height:100% ;display: flex }
+#y9x3y1y8x6{width:3mm;height:100%;display: flex }
 
-#y9x3y3x1{width:50mm;height:100%;border-bottom:;display: flex }
-#y9x3y3x2{width:50mm;height:100%;border-bottom:;display: flex }
-#y9x3y3x3{width:30mm;height:100%;border-bottom:;display: flex }
+#y9x3y3x1{width:50mm;height:100%;display: flex }
+#y9x3y3x2{width:50mm;height:100%;display: flex }
+#y9x3y3x3{width:30mm;height:100%;display: flex }
 
-#y10x1{width:37mm;height:100%;border-bottom:;display: flex;border-right: 1px solid black }
-#y10x2{width:135mm;height:100%;border-bottom:;display: flex }
+#y10x1{width:37mm;height:100%;display: flex;border-right: 1px solid black }
+#y10x2{width:135mm;height:100%;display: flex }
 
-#y11y1{width:100%;height:3.2mm;border-bottom:;display: flex; border: }
-#y11y2{width:100%;height:3.2mm;border-bottom:;display: flex ; border:}
-#y11y3{width:100%;height:3.2mm;border-bottom:;display: flex ; border:}
-#y11y4{width:100%;height:3.2mm;border-bottom:;display: flex ; border: }
-#y11y5{width:100%;height:3.2mm;border-bottom:;display: flex }
+#y11y1{width:100%;height:3.2mm;display: flex;  }
+#y11y2{width:100%;height:3.2mm;display: flex ; }
+#y11y3{width:100%;height:3.2mm;display: flex ; }
+#y11y4{width:100%;height:3.2mm;display: flex ;  }
+#y11y5{width:100%;height:3.2mm;display: flex }
 
 #y11y3x1{width:40mm;height:100%;border-right:;display: }
 #y11y3x2{width:50mm;height:100%;border-right:;display: }
 #y11y4x1{width:40mm;height:100%;border-right:;display: }
-#y11y4x2{width:80mm;height:100%;border-bottom:;display: }
+#y11y4x2{width:80mm;height:100%;display: }
 
-#y11y5x1{width:40mm;height:100%;border-right:;display: }
-#y11y5x2{width:60mm;height:100%;border-right:;display: }
-#y11y5x3{width:20mm;height:100%;border-right:;display: }
+#y11y5x1{width:40mm;height:100%;display: }
+#y11y5x2{width:60mm;height:100%;display: }
+#y11y5x3{width:20mm;height:100%;display: }
 #y11y5x4{width:40mm;height:3.2mm;display: }
-#y11y5x5{width:5mm;height:100%;border-bottom:;display: }
+#y11y5x5{width:5mm;height:100%;display: }
 
 .y{border-bottom: 1px solid black}
 .fss{font-size:9px;transform:scale(0.8);}
@@ -500,7 +501,7 @@ body,html{height:100%;width:100%;}
 #disp8{width:100%;height:100%;margin-left:2mm;margin-top:2mm; }
 #disp9{width:100%;height:100%;margin-left:2mm;margin-top:2mm; }
 #disp10{width:100%;height:50%;margin-left:2mm;margin-top:5mm; }
-#disp11{width:100%;height:50%;background: black;border-bottom: }
+#disp11{width:100%;height:50%;background: black; }
 #disp12{width:100%;height:50%;margin-left:2mm; margin-top:2mm;}
 #disp14{width:100%;height:50%;margin-left:2mm; margin-top:2mm;}
 #disp15{width:100%;height:50%;margin-left:2mm; margin-top:2mm;}

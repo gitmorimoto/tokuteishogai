@@ -59,6 +59,7 @@ export function confirm(){
                 case 42:
                 case 45:
                 case 62:
+                    console.log('Index='+index);
                     console.log(inpObj[index].value);
                     console.log(/^\d{4}-\d{2}-\d{2}$/.test(inpObj[index].value));
                     if(/^\d{4}-\d{2}-\d{2}$/.test(inpObj[index].value)){

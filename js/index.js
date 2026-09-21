@@ -9,6 +9,7 @@ import {recover} from './recoverData.js';
 import {clear} from './clearData.js';
 import {markCheck} from './mark.js';
 import {searchAll} from './search.js';
+import {searchById} from './searchById.js'
 document.addEventListener('DOMContentLoaded',function(){
     let output='frame3';//selected date is set in output element.
     
@@ -29,13 +30,13 @@ document.addEventListener('DOMContentLoaded',function(){
         markObj[i].style.borderRadius='10px';
         markObj[i].style.border='2px solid transparent';
     }
-
+/*
     fetch('treatmentHist.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('treatmentHist').innerHTML = data;
     });
-
+*/
     backward();
    // hide();
     display();
@@ -47,5 +48,6 @@ document.addEventListener('DOMContentLoaded',function(){
     recover();
     markCheck();
     searchAll();
+    searchById();
 
 })

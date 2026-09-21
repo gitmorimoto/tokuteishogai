@@ -7,7 +7,7 @@ body,html{height:100%;width:100%;}
 #topx3{width:40%;height:30px;display: flex}
 #topx4{width:10%;height:30px;display: flex}
 #topx5{width:10%;height:30px;display: flex}
-.inp{background:darkgreen;color:white}
+.inp{background:darkgreen;color:white;font-size:18px}
 .mark{font-size:9px}
 .page{width:210mm;height:298mm;border:1px solid white ; background:gray;color:white;border:}
 
@@ -384,8 +384,8 @@ body,html{height:100%;width:100%;}
 #y9x3{width:139mm;height:100%;border-right: }
 
 #y9x3y1{width:100%;height:34mm;border-bottom: 1px solid white;display: }
-#y9x3y2{width:100%;height:5mm;border-bottom: ;display: flex }
-#y9x3y3{width:100%;height:5.5mm;border-bottom:1px solid white ;display: flex; }
+#y9x3y2{width:100%;height:3mm;border-bottom: ;display: flex }
+#y9x3y3{width:100%;height:7.5mm;border-bottom:1px solid white ;display: flex; }
 #y9x3y4{width:100%;height:4.5mm;border-bottom: ;display: flex; }
 
 #y9x2y1{width:100%;height:45mm;border-bottom: 1px solid white;  }
