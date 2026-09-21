@@ -132,6 +132,7 @@ for(let i=0;i<69;i++)
     inp.style.height = '100%';
     inp.style.background = 'darkgreen';
     inp.style.color = 'white';
+    inp.style.fontSize="34px";
     inp.id = 'inp' + i;
     inp.classList.add('inp');
     //inp.value = 'test'+i;
@@ -159,6 +160,14 @@ function selectFrame(num){
 }
 //function init has callback onSelect as argment
 function init(onSelect){
+    console.log('init');
+    let calendar2Obj = document.getElementById('calendar2');
+    let calendarObj = document.getElementById('calendar');
+    let itemListObj = document.getElementById('itemList');
+    calendarObj.style.display = "none";
+    calendar2Obj.style.display = "none";
+    itemListObj.style.display = "none";
+    
     //let calendarObj = document.getElementById('calendar');
     //calendarObj.style.display = "none";
     for(let n=0;n<69;n++){
@@ -182,6 +191,10 @@ function init(onSelect){
         });
     }
 }
+
+function onSelect(n){
+    console.log('n='+n);
+}
 function searchAddress(){
     inpObj[4] = document.getElementById('inp4');
     inpObj[4].addEventListener('mouseleave',function(){
@@ -201,10 +214,11 @@ function searchAddress(){
 
 
 init(function(num){
-   // console.log('num='+num);
+    console.log('onSelect');
     let calendarObj = document.getElementById('calendar');
     let calendar2Obj = document.getElementById('calendar2');
     let itemListObj = document.getElementById('itemList');
+    
     
     selectFrame(num);
     console.log('num='+num);
@@ -292,7 +306,9 @@ init(function(num){
         case 65:
         case 66:
             calendarObj.style.display = "none";
+            calendar2Obj.style.display = "none";
             itemListObj.style.display = "block";
+            itemListObj.style.overflow = "scroll";
             console.log(getRefData);
               getRefData(num)
                 .then(dataArray => {
@@ -313,6 +329,7 @@ init(function(num){
         default:
             console.log('default');
             calendarObj.style.display = "none";
+            calendar2Obj.style.display = "none";
             itemListObj.style.display = "none";
             break;
     }
