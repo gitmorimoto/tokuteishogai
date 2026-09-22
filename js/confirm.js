@@ -131,12 +131,14 @@ export function confirm(){
             
         }));
         console.log(dataArray);
+        const markDataArray = getMarkData();
+        const sender = [dataArray,markDataArray];
         fetch('tempStore.php',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(dataArray)
+            body: JSON.stringify(sender)
         })
         .then(response => {
             if (!response.ok) {
@@ -151,18 +153,21 @@ export function confirm(){
             console.error('Error:',error);
         });
 
-
-        const markObj = document.querySelectorAll('.mark');
-        console.log(markObj);
-        let markDataArray = [];
-        markObj.forEach((elem,index)=>{
-            if(elem.style.borderColor === 'transparent'){
-                markDataArray[index]=0;
-            }else{
-                markDataArray[index]=1;
-            }
-        })
-        console.log(markDataArray);
+        function getMarkData(){
+            const markObj = document.querySelectorAll('.mark');
+            console.log(markObj);
+            let markDataArray = [];
+            markObj.forEach((elem,index)=>{
+                if(elem.style.borderColor === 'transparent'){
+                    markDataArray[index]=0;
+                }else{
+                    markDataArray[index]=1;
+                }
+            })
+            console.log(markDataArray);
+            return markDataArray;
+        }
+        /*
         fetch('markData.php',{
             method:'POST',
             headers: {
@@ -182,8 +187,8 @@ export function confirm(){
         .catch(error => {
             console.error('Error:',error);
         });
- 
-        })
+        */
+    })
     
         
    

@@ -11,7 +11,7 @@ $json = file_get_contents('php://input');
 $inp = json_decode($json,true);
 //var_dump($inp);
 $selId = $inp["selId"];
-$selId = 21168;
+//$selId = 21168;
 $idToPath = json_decode(file_get_contents($pathToDatabase.'/manager/idToPath.json'),true);
 //print_r($idToPath);
 //echo gettype($idToPath);

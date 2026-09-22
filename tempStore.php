@@ -2,8 +2,11 @@
 
 $json = file_get_contents('php://input');
 if($json){
-    $dataArray = json_decode($json,true);
-    file_put_contents('temp/store.json',json_encode($dataArray,JSON_UNESCAPED_UNICODE));
+    $Array = json_decode($json,true);
+    //$textDataArray = $Array[0];
+    //$markDataArray = $Array[1];
+
+    file_put_contents('temp/store.json',json_encode($Array,JSON_UNESCAPED_UNICODE));
     $return = ['stored'];
 }else{
     $return = ['no data'];

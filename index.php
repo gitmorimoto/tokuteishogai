@@ -963,7 +963,7 @@ if(file_exists('caseArray.dat')){
 									</div>
 								</div>
 								<div id="y8x2y6x3" class="exp">
-									<div id="disp58" class="disp"><textarea cols="20" rows="8" id="t58" class="inp" type="" name="" value=""></textarea>64</div>
+									<div id="disp58" class="disp"><textarea cols="20" rows="8" id="t58" class="inp" type="" name="" value=""></textarea></div>
 								</div>
 							</div>
 		<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
